@@ -1,31 +1,30 @@
-.card-product{
-    margin-top: 50px;
-    min-width: 302px;
-    border: 1px solid transparent;
-    transition-property: transform;
-    transition-duration: 1s;
-    &:hover{
-        .product-image{
-            transform: scale(1.05);
-        }
+.card-product {
+  margin-top: 50px;
+  min-width: 302px;
+  border: 1px solid transparent;
+  transition-property: transform;
+  transition-duration: 1s;
+  &:hover {
+    .product-image {
+      transform: scale(1.05);
     }
+  }
 }
 
-.card-body{
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 0px;
+.card-body {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 0px;
 }
 
-.category{
-    opacity: 0.8;
-    color: black;
-    font-size: 14px;
+.category {
+  opacity: 0.8;
+  color: black;
+  font-size: 14px;
 }
 
-.price{
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    
+.price {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
