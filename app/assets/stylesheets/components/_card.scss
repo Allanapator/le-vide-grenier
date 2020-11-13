@@ -1,13 +1,21 @@
 .card-product{
+    transform: scale(1);
     margin-top: 50px;
     min-width: 302px;
     border: 1px solid transparent;
     transition-property: transform;
-    transition-duration: 1s;
-    &:hover{
-        .product-image{
-            transform: scale(1.05);
-        }
+    img{
+        transition-property: transform;
+        transition-duration: 0.5s;
+        transform: scale(1);
+        width: 300px;
+        border-radius: 2px;
+        height: auto;
+        vertical-align: middle;
+    }
+    &:hover img{
+        transition-duration: 0.5s;
+        transform: scale(0.95);
     }
 }
 

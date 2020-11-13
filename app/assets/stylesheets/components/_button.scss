@@ -14,5 +14,24 @@
     padding: 0;
     background: none;
     font-size: 16px;
+    &:focus{
+        outline: none;
+    }
+}
+
+.button-add{
+    margin-top: 50px;
+    position: absolute;
+    position: fixed;
+    right: 50px;
+    border: 1px solid rgb(27, 27, 27);
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: rgb(27, 27, 27);
+    &:hover{
+        color: rgb(27, 27, 27);
+        text-decoration: none;
+    }
 }
 
