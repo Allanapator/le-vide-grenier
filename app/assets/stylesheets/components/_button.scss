@@ -1,0 +1,18 @@
+.button-product{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(27, 27, 27);
+    &:hover{
+        color: rgb(27, 27, 27);
+        border-bottom: 1px solid rgb(27, 27, 27);
+        text-decoration: none;
+    }
+}
+
+.button-heart{
+    border: none;
+    padding: 0;
+    background: none;
+    font-size: 16px;
+}
+
