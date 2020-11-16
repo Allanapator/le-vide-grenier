@@ -3,17 +3,19 @@
 <div class="container mb-5">
     <div class="row">
         <% @products.each do |product|%>
-            <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="card card-product" style="width: 18rem;">
-                    <img class="card-img-top rounded-top product-image" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title"><%= link_to product.name, product_path(product), class:"button-product"%></h5>
-                            <button class="button-heart"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="d-flex justify-content-between mt-2">
-                            <p class="card-text category"><%= product.category %></p>
-                            <p class="card-text price"><%= product.price %>€</p>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="d-flex justify-content-center">
+                    <div class="card card-product" style="width: 18rem;">
+                        <img class="card-img-top rounded-top product-image" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title"><%= link_to product.name, product_path(product), class:"button-product"%></h5>
+                                <button class="button-heart"><i class="far fa-heart"></i></button>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <p class="card-text category"><%= product.category %></p>
+                                <p class="card-text price"><%= product.price %>€</p>
+                            </div>
                         </div>
                     </div>
                 </div>
