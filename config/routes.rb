@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :favorite_profils
+
+  get "search", to: "products#search"
 end

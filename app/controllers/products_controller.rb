@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def search
+    @products = Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%")
+  end
+
   def show
   end
   
