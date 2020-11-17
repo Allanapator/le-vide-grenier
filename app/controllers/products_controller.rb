@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
-    @products = Product.all
+    @products = current_user.products
   end
 
   def search
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :category, :price, :quantity)
+    params.require(:product).permit(:name, :category, :price, :quantity, :tag)
   end
 
 end
