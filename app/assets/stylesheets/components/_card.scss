@@ -39,6 +39,25 @@
 
 .info-product {
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-radius: 2px;
+  background: #F8F8F8;
+}
+
+.gold{
+  color: #D5A870;
+}
+
+.price{
+  font-size: 40px;
+}
+
+.name-product{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 23px;
+}
+
+.name-artist{
+  font-size: 17px;
 }
