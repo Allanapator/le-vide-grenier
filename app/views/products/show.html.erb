@@ -13,7 +13,6 @@
                 <p class="mb-2">PRIX</p>
                 <% x = 1 %>
                 <p class="price-show gold"><%= @product.price %>€</p>
-
                 <div class="d-flex justify-content-between">
                     <select name="" id="">
                         <% if @product.quantity < 30 %>
@@ -28,21 +27,8 @@
                             <% end %>
                         <% end %>
                     </select>
-
-                    <% if @product.quantity < 30 %>
-                    <% while x < @product.quantity %>
-                    <option value=""><%= x %></option>
-                    <% x += 1 %>
-                    <% end %>
-                    <% else %>
-
-                    <% while x <= 20 %>
-                    <option value=""><%= x %></option>
-                    <% x += 1 %>
-                    <% end %>
-                    <% end %>
-                </select>
-               <%= button_to 'Add to cart', cart_products_path(product_id: @product), class:'button-cart' %>
+                    <%= button_to 'Add to cart', cart_products_path(product_id: @product), class:'button-cart' %>
+                </div>
             </div>
         </div>
     </div>

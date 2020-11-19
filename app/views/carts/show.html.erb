@@ -1,6 +1,10 @@
 <h1>Carts#show</h1>
 <p>Ici c'est le panier</p>
 
-<%= @cart.cart_products.first.product.name%>
+
+
+<% @cart.cart_products.each do |product| %>
+    <%= product.product.name %>
+<% end %>
 
 <%= @cart.total_price %>

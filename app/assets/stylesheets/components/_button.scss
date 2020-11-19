@@ -45,8 +45,33 @@
     background: #D5A870;
     color: white;
     border: 1px solid transparent;
+    transition: 0.5s background ease;
 
     &:hover {
         background: #D29961;
     }
+}
+
+.button-search {
+    padding: 15px 25px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    transition: 0.5s color ease;
+    transition: 0.5s border ease;
+    text-decoration: none;
+
+    &:hover {
+        color: #D5A870;
+        border: 1px solid #D5A870;
+        text-decoration: none;
+    }
+}
+
+.button-search-logo {
+    text-decoration: none;
+    background: transparent;
+    border: none;
 }
