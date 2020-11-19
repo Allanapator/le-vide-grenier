@@ -1,6 +1,7 @@
 <h1 class="text-center mt-5">Panier</h1>
 <p class="text-center my-5">Vos produits sélectionnés :</p>
 
+
 <% @cart.cart_products.each do |cart_product|%>
 <div class="cart-product mt-2">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
@@ -12,3 +13,4 @@
 </div>        
 <% end %>
 <p>Sous-total : <%= @cart.total_price %> euros</p>
+
