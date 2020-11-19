@@ -28,7 +28,7 @@
                     <% end %>
                     <% end %>
                 </select>
-                <button class="button-cart">Ajouter au panier</button>
+               <%= button_to 'Add to cart', cart_products_path(product_id: @product), class:'button-cart' %>
             </div>
         </div>
     </div>
