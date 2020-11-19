@@ -29,9 +29,20 @@
                         <% end %>
                     </select>
 
-                    <button class="button-cart">Ajouter au panier</button>
-                </div>
-                
+                    <% if @product.quantity < 30 %>
+                    <% while x < @product.quantity %>
+                    <option value=""><%= x %></option>
+                    <% x += 1 %>
+                    <% end %>
+                    <% else %>
+
+                    <% while x <= 20 %>
+                    <option value=""><%= x %></option>
+                    <% x += 1 %>
+                    <% end %>
+                    <% end %>
+                </select>
+               <%= button_to 'Add to cart', cart_products_path(product_id: @product), class:'button-cart' %>
             </div>
         </div>
     </div>
