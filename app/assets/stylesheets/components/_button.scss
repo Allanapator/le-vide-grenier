@@ -1,25 +1,27 @@
-.button-product{
+.button-product {
     font-size: 16px;
     font-weight: bold;
     color: rgb(27, 27, 27);
-    &:hover{
+
+    &:hover {
         color: rgb(27, 27, 27);
         border-bottom: 1px solid rgb(27, 27, 27);
         text-decoration: none;
     }
 }
 
-.button-heart{
+.button-heart {
     border: none;
     padding: 0;
     background: none;
     font-size: 16px;
-    &:focus{
+
+    &:focus {
         outline: none;
     }
 }
 
-.button-add{
+.button-add {
     margin-top: 50px;
     position: absolute;
     position: fixed;
@@ -29,20 +31,22 @@
     font-size: 16px;
     padding: 10px 20px;
     color: rgb(27, 27, 27);
-    &:hover{
+
+    &:hover {
         color: rgb(27, 27, 27);
         text-decoration: none;
     }
 }
 
-.button-cart{
+.button-cart {
     padding: 15px 25px;
     border-radius: 3px;
     text-decoration: none;
     background: #D5A870;
     color: white;
     border: 1px solid transparent;
-    &:hover{
+
+    &:hover {
         background: #D29961;
     }
 }
