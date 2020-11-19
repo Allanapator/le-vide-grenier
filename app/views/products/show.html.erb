@@ -2,33 +2,36 @@
     <!-- <%= link_to "All Products", products_path(@products), class:"button-add"%> -->
     <div class="row">
         <div class="col-sm-12 col-md-8 cold-lg-8">
-            <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-show-product mb-3">
-            <h4 class="name-product"><%= @product.name.split(' ').each{ |x| x.capitalize! }.join(' ') %></h4>
+            <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt=""
+                class="image-show-product mb-3">
+            <h4 class="name-product"><%= @product.name.split(' ').each{ |x| x.capitalize! }.join(' ') %>, <span class="year"><%= @product.created_at.year %></span></h4>
             <h5 class="name-artist gold"><%= @product.user.name.capitalize %></h5>
             <p><%= @product.category.capitalize %></p>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 mx-auto">
             <div class="info-product">
                 <p class="mb-2">PRIX</p>
-                <% x = 0 %>
+                <% x = 1 %>
                 <p class="price-show gold"><%= @product.price %>€</p>
 
-                <select name="" id="">
+                <div class="d-flex justify-content-between">
+                    <select name="" id="">
+                        <% if @product.quantity < 30 %>
+                            <% while x < @product.quantity %>
+                            <option value=""><%= x %></option>
+                            <% x += 1 %>
+                            <% end %>
+                        <% else %>
+                            <% while x <= 20 %>
+                            <option value=""><%= x %></option>
+                            <% x += 1 %>
+                            <% end %>
+                        <% end %>
+                    </select>
 
-                    <% if @product.quantity < 30 %>
-                    <% while x < @product.quantity %>
-                    <option value=""><%= x %></option>
-                    <% x += 1 %>
-                    <% end %>
-                    <% else %>
-
-                    <% while x <= 20 %>
-                    <option value=""><%= x %></option>
-                    <% x += 1 %>
-                    <% end %>
-                    <% end %>
-                </select>
-                <button class="button-cart">Ajouter au panier</button>
+                    <button class="button-cart">Ajouter au panier</button>
+                </div>
+                
             </div>
         </div>
     </div>

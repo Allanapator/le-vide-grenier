@@ -4,6 +4,7 @@
   min-width: 302px;
   border: 1px solid transparent;
   transition-property: transform;
+
   img {
     transition-property: transform;
     transition-duration: 0.5s;
@@ -13,6 +14,7 @@
     height: auto;
     vertical-align: middle;
   }
+
   &:hover img {
     transition-duration: 0.5s;
     transform: scale(0.95);
@@ -44,20 +46,26 @@
   background: #F8F8F8;
 }
 
-.gold{
+.gold {
   color: #D5A870;
 }
 
-.price-show{
+.price-show {
   font-size: 40px;
 }
 
-.name-product{
+.name-product {
   font-weight: bold;
   font-style: italic;
   font-size: 23px;
 }
 
-.name-artist{
+.name-artist {
   font-size: 17px;
+}
+
+.year {
+  font-size: 17px;
+  font-weight: normal;
+  font-style: normal;
 }
