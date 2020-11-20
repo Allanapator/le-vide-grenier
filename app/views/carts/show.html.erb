@@ -1,24 +1,24 @@
 <h1 class="text-center mt-5">Panier</h1>
 <p class="text-center my-5">Vos produits sélectionnés :</p>
 
+<div class="container mb-5">
+  <% @cart.cart_products.each do |cart_product|%>
+    <div class="cart-product mt-2">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="cart-product-infos d-flex justify-content-around align-items-center">
+        <div>
+          <h2 class="mb-3"> <%= cart_product.product.name%> </h2>
+          <p>Prix: <%= cart_product.product.price %> euros</p>
+        </div>
+        
+        <div>
+          <%= link_to "Supprimer l'article", cart_product_path(cart_product), class:"button-delete mt-5", method: :delete, data: {confirm: "Are you sure ?"}  %>
+        </div>
+      </div>
+    </div>        
+  <% end %>
 
-<% @cart.cart_products.each do |cart_product|%>
-  <div class="cart-product mt-2">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="cart-product-infos">
-      <h2> <%= cart_product.product.name%> </h2>
-      <p>Quantité : <%= cart_product.quantity %></p>
-      <p>Prix à l'unité: <%= cart_product.product.price %> euros</p>
-      <%= link_to "Clear this product", cart_product_path(cart_product),
-      class:"btn btn-dark",
-      method: :delete,
-      data: {confirm: "Are you sure ?"}  %>
-    </div>
-  </div>        
-<% end %>
-<p>Sous-total : <%= @cart.total_price %> euros</p>
+  <p class="mt-5">Sous-total : <%= @cart.total_price %> euros</p>
 
-<%= link_to "Clear the cart", cart_path(@cart),
-class:"btn btn-dark",
-method: :delete,
-data: { confirm: "Are you sure ?"} %>
+  <%= link_to "Supprimer le panier", cart_path(@cart), class:"button-delete mb-5", method: :delete, data: { confirm: "Are you sure ?"} %>
+</div>

@@ -4,14 +4,17 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
+  text-decoration: none;
   color: white;
   font-size: 20px;
-  padding-bottom: 0;
   transition: 0.8s color ease;
 
   &:hover {
     color: #d29961;
-    border-bottom: 1px solid #d29961;
+  }
+
+  &:focus {
+    color: #d29961;
   }
 }
 
@@ -48,6 +51,7 @@
   &:hover {
     color: #d29961;
   }
+
   &:focus {
     color: white;
   }
