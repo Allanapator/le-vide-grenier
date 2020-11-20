@@ -5,9 +5,7 @@ class Cart < ApplicationRecord
 
   def add_product(product)
     current_product = cart_products.find_by(product_id: product.id)
-    if current_product
-      current_product.increment(:quantity)
-    else
+    unless current_product
       current_product = cart_products.build(product_id: product.id)
       current_product.increment(:quantity)
     end
