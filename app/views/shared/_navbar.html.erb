@@ -6,15 +6,13 @@
 
   <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%=link_to 'Mes produits', products_path, class:'nav-link white' %>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profil
+           <i class="far fa-user"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
+            <%=link_to 'Mes produits', products_path, class:'dropdown-item' %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
           <% else %>
             <%= link_to "Sign in", new_user_session_path, class:"dropdown-item" %>
@@ -32,9 +30,6 @@
 
     <button class="cart-logo button-search-logo mb-0 ml-2 mr-2 mt-4" id="button-search-logo"><i class="fas fa-search"></i></button>
 
-    <%= link_to products_path, class:'ml-2 mr-2 mt-4 cart-logo' do%>
-      <i class="far fa-user"></i>
-    <% end %>
 
     <%= link_to cart_path(@cart), class:'ml-2 mr-2 mt-4 cart-logo' do%>
     <% sum = 0 %>

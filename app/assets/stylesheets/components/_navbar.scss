@@ -10,8 +10,8 @@
   transition: 0.8s color ease;
 
   &:hover {
-    color: #D29961;
-    border-bottom: 1px solid #D29961;
+    color: #d29961;
+    border-bottom: 1px solid #d29961;
   }
 }
 
@@ -21,7 +21,7 @@
   transition: 0.8s color ease;
 
   &:hover {
-    color: #D29961;
+    color: #d29961;
   }
 }
 
@@ -46,14 +46,17 @@
   transition: 0.5s color ease;
 
   &:hover {
-    color: #D29961;
+    color: #d29961;
+  }
+  &:focus {
+    color: white;
   }
 }
 
 .number-product {
   padding-left: 5px;
   font-size: 16px;
-  color: #D5A870;
+  color: #d5a870;
 }
 
 .search-form {

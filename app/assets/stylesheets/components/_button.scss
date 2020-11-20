@@ -1,78 +1,92 @@
 .button-product {
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(27, 27, 27);
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(27, 27, 27);
 
-    &:hover {
-        color: rgb(27, 27, 27);
-        border-bottom: 1px solid rgb(27, 27, 27);
-        text-decoration: none;
-    }
+  &:hover {
+    color: rgb(27, 27, 27);
+    border-bottom: 1px solid rgb(27, 27, 27);
+    text-decoration: none;
+  }
 }
 
 .button-heart {
-    border: none;
-    padding: 0;
-    background: none;
-    font-size: 16px;
+  border: none;
+  padding: 0;
+  background: none;
+  font-size: 16px;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 .button-add {
-    margin-top: 50px;
-    position: absolute;
-    position: fixed;
-    right: 50px;
-    border: 1px solid rgb(27, 27, 27);
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 10px 20px;
-    color: rgb(27, 27, 27);
+  margin-top: 50px;
+  position: absolute;
+  position: fixed;
+  right: 50px;
+  border: 1px solid rgb(27, 27, 27);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: rgb(27, 27, 27);
 
-    &:hover {
-        color: rgb(27, 27, 27);
-        text-decoration: none;
-    }
+  &:hover {
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+  }
 }
 
 .button-cart {
-    padding: 15px 25px;
-    border-radius: 3px;
-    text-decoration: none;
-    background: #D5A870;
-    color: white;
-    border: 1px solid transparent;
-    transition: 0.5s background ease;
+  padding: 15px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #d5a870;
+  color: white;
+  border: 1px solid transparent;
+  transition: 0.5s background ease;
 
-    &:hover {
-        background: #D29961;
-        color: white;
-    }
+  &:hover {
+    background: #d29961;
+    color: white;
+  }
 }
 
 .button-search {
-    padding: 15px 25px;
-    border-radius: 3px;
-    text-decoration: none;
-    color: white;
-    background: transparent;
-    border: 1px solid white;
-    transition: 0.5s color ease;
-    transition: 0.5s border ease;
-    text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  transition: 0.5s color ease;
+  transition: 0.5s border ease;
+  text-decoration: none;
 
-    &:hover {
-        color: #D5A870;
-        border: 1px solid #D5A870;
-        text-decoration: none;
-    }
+  &:hover {
+    color: #d5a870;
+    border: 1px solid #d5a870;
+    text-decoration: none;
+  }
 }
 
 .button-search-logo {
-    text-decoration: none;
-    background: transparent;
-    border: none;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+}
+// NAVBAR LINKS //
+.dropdown-toggle {
+  &:after {
+    display: none;
+  }
+  &:focus {
+    color: white;
+  }
+}
+.far .fa-user {
+  :before {
+    color: white;
+  }
 }

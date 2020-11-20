@@ -22,7 +22,7 @@ class CartProductsController < ApplicationController
     
     if array_id.include?(product.id)
       redirect_to root_path
-      flash[:alert] = "This produt is already in your cart"
+      flash[:alert] = "This product is already in your cart"
     elsif @cart_product.save
       redirect_to @cart_product.cart
       flash[:notice] = "Product added successfully"
@@ -40,7 +40,7 @@ class CartProductsController < ApplicationController
 
   def destroy
     @cart = Cart.find(session[:cart_id])
-    @card_product.destroy
+    @cart_product.destroy
     redirect_to cart_path(@cart)
   end
 
