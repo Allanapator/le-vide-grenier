@@ -9,8 +9,16 @@
       <h2> <%= cart_product.product.name%> </h2>
       <p>Quantité : <%= cart_product.quantity %></p>
       <p>Prix à l'unité: <%= cart_product.product.price %> euros</p>
+      <%= link_to "Clear this product", cart_product_path(cart_product),
+      class:"btn btn-dark",
+      method: :delete,
+      data: {confirm: "Are you sure ?"}  %>
     </div>
   </div>        
 <% end %>
 <p>Sous-total : <%= @cart.total_price %> euros</p>
 
+<%= link_to "Clear the cart", cart_path(@cart),
+class:"btn btn-dark",
+method: :delete,
+data: { confirm: "Are you sure ?"} %>
