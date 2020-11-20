@@ -15,9 +15,15 @@ class CartProductsController < ApplicationController
   end
 
   def create
+    array_id = []
     product = Product.find(params[:product_id])
+    @cart.cart_products.each{ |x| array_id << x.product_id }
     @cart_product = @cart.add_product(product)
-    if @cart_product.save
+    
+    if array_id.include?(product.id)
+      redirect_to root_path
+      flash[:alert] = "This produt is already in your cart"
+    elsif @cart_product.save
       redirect_to @cart_product.cart
       flash[:notice] = "Product added successfully"
     else
