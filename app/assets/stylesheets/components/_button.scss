@@ -38,6 +38,20 @@
   }
 }
 
+.button-delete {
+
+  border: 1px solid rgb(27, 27, 27);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: rgb(27, 27, 27);
+
+  &:hover {
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+  }
+}
+
 .button-cart {
   padding: 15px 25px;
   border-radius: 3px;
@@ -76,15 +90,18 @@
   background: transparent;
   border: none;
 }
+
 // NAVBAR LINKS //
 .dropdown-toggle {
   &:after {
     display: none;
   }
+
   &:focus {
     color: white;
   }
 }
+
 .far .fa-user {
   :before {
     color: white;
