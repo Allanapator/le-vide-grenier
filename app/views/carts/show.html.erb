@@ -3,14 +3,14 @@
 
 
 <% @cart.cart_products.each do |cart_product|%>
-<div class="cart-product mt-2">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="cart-product-infos">
-        <h2> <%= cart_product.product.name%> </h2>
-        <p>Quantité : <%= cart_product.product.quantity%></p>
-        <p>Prix à l'unité: <%= cart_product.product.price%> euros</p>
-  </div>
-</div>        
+  <div class="cart-product mt-2">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="cart-product-infos">
+      <h2> <%= cart_product.product.name%> </h2>
+      <p>Quantité : <%= cart_product.quantity %></p>
+      <p>Prix à l'unité: <%= cart_product.product.price %> euros</p>
+    </div>
+  </div>        
 <% end %>
 <p>Sous-total : <%= @cart.total_price %> euros</p>
 
