@@ -9,6 +9,7 @@ class Cart < ApplicationRecord
       current_product.increment(:quantity)
     else
       current_product = cart_products.build(product_id: product.id)
+      current_product.increment(:quantity)
     end
     current_product
   end
