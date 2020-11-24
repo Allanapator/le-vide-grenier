@@ -3,10 +3,10 @@ const button = () => {
 
   btn.forEach(e => {
     e.addEventListener('click', () => {
-      if (e.className === 'far fa-heart') {
-        e.className = 'fas fa-heart';
+      if (e.className.includes('far fa-heart')) {
+        e.className = 'button-like fas fa-heart';
       } else {
-        e.className = 'far fa-heart';
+        e.className = 'button-like far fa-heart';
       }
     })
   })

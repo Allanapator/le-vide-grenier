@@ -1,56 +1,57 @@
-<div class="wrap cf">
-  <h1 class="projTitle">Shopping Cart</h1>
-  <div class="heading cf">
-    <h1>My Cart</h1>
-    <%=link_to "Continue shopping", products_path, class:"continue" %>
-  </div>
-  <div class="cart">
-<!--    <ul class="tableHead">
-      <li class="prodHeader">Product</li>
-      <li>Quantity</li>
-      <li>Total</li>
-       <li>Remove</li>
-    </ul>-->
-    <ul class="cartWrap">
-      <li class="items odd">
-        
-    <div class="infoWrap"> 
-          <% @cart.cart_products.each do |cart_product|%>
-        <div class="cartSection">
-        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
-          <p class="itemNumber">#QUE-007544-002</p>
-          <h3><%= cart_product.product.name%></h3>
-          <p class="stockStatus">In Stock</p>
-        </div>  
-    
-        
-        <div class="prodTotal cartSection">
-          <p><%= cart_product.product.price %> €</p>
+<div class="background-cart">
+    <div class="container ">
+        <div class="d-flex justify-content-between align-items-center section">
+            <div class="header-cart d-flex">
+                <h2 class="">Shopping Cart</h2>
+                <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @cart.cart_products.count %></h2>
+            </div>
+            <%=link_to products_path, class:"button-return-shop" do %>
+                <p class="mb-0">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
+            <% end %>
         </div>
-              <div class="cartSection removeWrap">
-           <%= link_to "x", cart_product_path(cart_product), class:"remove", method: :delete, data: {confirm: "Are you sure ?"}  %>
-        </div>
-      </div>
-      <% end %>
-      </li>
 
-      
-      
-      <!--<li class="items even">Item 2</li>-->
- 
-    </ul>
-  </div>
-  
-  <div class="promoCode"><label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
-  <a href="#" class="btn"></a></div>
-  
-  <div class="subtotal cf">
-    <ul>
-      <li class="totalRow"><span class="label">Subtotal</span><span class="value"></span> €</li>
-      <li class="totalRow"><span class="label">Shipping</span><span class="value"></span> €</li>
-      <li class="totalRow"><span class="label">Tax</span><span class="value"></span> €</li>
-      <li class="totalRow final"><span class="label">Total</span><span class="value"><%= @cart.total_price %> €</span></li>
-      <a href="#" class="btn continue">Checkout</a>
-    </ul>
-  </div>
+        <div class="mt-5 d-flex justify-content-between">
+            <div class="mb-5">
+                <% @cart.cart_products.each do |cart_product| %>
+                    <div class="card-product-cart d-flex">
+                        <img class="image-cart" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
+                        <div class="info-in-my-cart">
+                            <div class="d-flex">
+                                <div class="info-product-in-cart">
+                                    <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
+                                    <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
+                                </div>
+                                <div class="ml-2 div-price-cart">
+                                    <p class="font-12">PRIX</p>
+                                    <p class="cart-price-product"><%= cart_product.product.price %>€</p>
+                                </div>
+                                <div>
+                                    <%= link_to cart_product_path(cart_product), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
+                                        <p><i class="gold icone-cart far fa-trash-alt"></i></p>
+                                    <% end %>
+                                    <button class="button-heart"><i id="" class="far fa-heart button-like-cart gold "></i></button>
+                                </div>
+                            </div>
+                            <div class="form-check checkbox check-pad">
+                                <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
+                                <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+
+            <div class="panier-total">
+                <p class="font-12">TOTAL</p>
+                <p class="gold price-total-cart"><%= @cart.total_price %> €</p>
+                <div class="cart-livraison d-flex">
+                    <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
+                    <p class="">Livraison sous 7 jours en moyenne</p>
+                </div>
+                <button class="button-cart"><i class="fas fa-lock"></i> <span class="ml-3 mr-3">VALIDER</span> <i class="fas fa-arrow-right"></i></button>
+                <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
+                <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
+            </div>
+        </div>
+    </div>
 </div>

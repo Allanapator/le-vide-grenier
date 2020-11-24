@@ -23,6 +23,7 @@ require("channels");
 // External imports
 import "bootstrap";
 import { button } from '../components/buttonFavorite';
+import { buttonFavCart } from '../components/buttonFavCart';
 import { buttonSearch } from '../components/buttonSearch'
 
 // Internal imports, e.g:
@@ -33,4 +34,5 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   button();
   buttonSearch();
+  buttonFavCart();
 });
