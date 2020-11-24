@@ -80,6 +80,7 @@
   text-decoration: none;
 
   &:hover {
+    outline: none;
     color: #d5a870;
     border: 1px solid #d5a870;
     text-decoration: none;
@@ -90,6 +91,24 @@
   text-decoration: none;
   background: transparent;
   border: none;
+}
+
+.button-return-shop {
+  margin-bottom: 0.5em;
+  text-decoration: none;
+  margin-top: 50px;
+  padding: 15px 20px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  background: #d5a870;
+  color: white;
+  transition: 0.5s background ease;
+
+  &:hover {
+    text-decoration: none;
+    background: #d29961;
+    color: white;
+  }
 }
 
 // NAVBAR LINKS //
