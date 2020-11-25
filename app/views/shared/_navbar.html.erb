@@ -6,7 +6,7 @@
 
   <div class="collapse navbar-collapse d-flex justify-content-end mr-5" id="navbarSupportedContent">
     
-    <form class="form-inline my-2 my-lg-0 search-form" action="/search">
+    <form class="form-inline my-2 my-lg-0 search-form none" action="/search">
       <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
       <button class="button-search my-2 my-sm-0" type="submit">Search</button>
     </form>
@@ -21,6 +21,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <%=link_to 'Mes produits', products_path, class:'dropdown-item' %>
+            <%=link_to 'Mes favoris', products_path, class:'dropdown-item' %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
           <% else %>
             <%= link_to "Se connecter", new_user_session_path, class:"dropdown-item" %>

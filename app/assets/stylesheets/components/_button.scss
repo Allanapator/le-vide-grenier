@@ -91,6 +91,10 @@
   text-decoration: none;
   background: transparent;
   border: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .button-return-shop {

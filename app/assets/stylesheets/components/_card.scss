@@ -45,7 +45,7 @@
 
 .test {
   padding: 50px;
-  height: 500px;
+  min-height: 500px;
   background: #2F2F2F;
   width: 100%;
 }
@@ -60,6 +60,11 @@
   color: white;
   font-size: 26px;
   margin-left: 150px;
+}
+
+.other-product-div img {
+  width: 250px;
+  height: auto;
 }
 
 .block {

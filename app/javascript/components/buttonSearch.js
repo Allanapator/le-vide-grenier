@@ -3,12 +3,14 @@ const buttonSearch = () => {
     const block = document.querySelector(".search-form")
 
     btn.addEventListener('click', () => {
-        if (block.style.display == "none") {
-            block.style.display = "block"
-            console.log('1')
+        if (block.className.includes("none")) {
+            block.classList.add("dis-block")
+            btn.style.color = "#d5a870"
+            block.classList.remove("none")
         } else {
-            block.style.display = "none"
-            console.log('2')
+            block.classList.remove("dis-block")
+            btn.style.color = "white"
+            block.classList.add("none")
         }
     })
 }
