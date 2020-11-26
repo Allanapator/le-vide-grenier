@@ -24,7 +24,8 @@ require("channels");
 import "bootstrap";
 import { button } from '../components/buttonFavorite';
 import { buttonFavCart } from '../components/buttonFavCart';
-import { buttonSearch } from '../components/buttonSearch'
+import { buttonSearch } from '../components/buttonSearch';
+import { heart } from '../components/heartIndex';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,6 +34,7 @@ document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
   button();
+  heart();
   buttonSearch();
   buttonFavCart();
 });

@@ -76,8 +76,8 @@
     <h4 class="other-product-artist">Autres oeuvres de <%= @product.user.name.capitalize %></h4>
     <div class="d-flex p-2" style="justify-content: space-around";>
         <% @product.user.products[0..3].each do |product| %>
-            <div class="other-product-div">
-                <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"image-other-product mt-5 mr-5 mb-3" %>
+            <div class="other-product-div m-3">
+                <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"" %>
                 <p class="name-product-other"><%= product.name.capitalize %>, <%= product.price %>€</p>
             </div>
         <% end %>
