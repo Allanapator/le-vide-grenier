@@ -19,6 +19,10 @@
     transition-duration: 0.5s;
     transform: scale(0.95);
   }
+
+  &:hover .btn-heart-index {
+    transition: 0.5s display ease;
+  }
 }
 
 .width-700 {
@@ -31,16 +35,23 @@
   padding-bottom: 0px;
 }
 
+.card-title {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
 .category {
   opacity: 0.8;
   color: black;
   font-size: 14px;
+  margin: 0;
 }
 
 .price {
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
+  margin: 0;
 }
 
 .test {
@@ -63,8 +74,14 @@
 }
 
 .other-product-div img {
+  border: 2px solid black;
   width: 250px;
   height: auto;
+  transition: 0.3s transform ease;
+
+  &:hover {
+    transform: scale(0.95);
+  }
 }
 
 .block {

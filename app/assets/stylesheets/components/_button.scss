@@ -1,5 +1,5 @@
 .button-product {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: rgb(27, 27, 27);
 
@@ -18,6 +18,33 @@
 
   &:focus {
     outline: none;
+  }
+}
+
+.btn-heart-index {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border: none;
+  padding: 0;
+  background: #EFEFEF;
+  font-size: 16px;
+  border-radius: 50%;
+  color: black;
+  transition: 0.5s color ease;
+  transition: 0.5s background ease;
+
+  &:hover {
+    background: #d5a870;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+    background: #d5a870;
+    color: white;
   }
 }
 
