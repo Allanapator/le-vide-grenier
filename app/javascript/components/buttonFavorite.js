@@ -1,12 +1,16 @@
 const button = () => {
-  const btn = document.querySelectorAll(".button-like");
+  const buttonHeart = document.querySelectorAll(".button-heart")
+  const btns = document.querySelectorAll(".button-like");
+  const cards = document.querySelectorAll(".card-product")
 
-  btn.forEach(e => {
-    e.addEventListener('click', () => {
-      if (e.className.includes('far fa-heart')) {
-        e.className = 'button-like fas fa-heart';
+  buttonHeart.forEach(btnHeart => {
+    btnHeart.addEventListener("click", () => {
+      if (btnHeart.innerHTML.includes("far fa-heart")) {
+        btnHeart.innerHTML = `<i id="" class="button-like fas fa-heart" ></i>`
+        console.log("hello")
       } else {
-        e.className = 'button-like far fa-heart';
+        btnHeart.innerHTML = `<i id="" class="button-like far fa-heart" ></i>`
+        console.log("bye bye")
       }
     })
   })

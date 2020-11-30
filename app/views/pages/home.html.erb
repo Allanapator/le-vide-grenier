@@ -2,9 +2,11 @@
 <p class="text-center mt-3"> <%= Product.all.count %> products are available </p>
 <div class="container mb-5">
     <div class="row">
+        <% count = 0 %>
         <% @products.each do |product|%>
+            <% count += 1 %>
             <div class="col-sm-6 col-md-4 col-lg-4">
-                <div class="card card-product" style="width: 18rem;">
+                <div class="card card-product" style="width: 18rem;" data-number='<%= count %>'>
                     <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image" %>
                     <div class="card-body">
                         <div>
@@ -19,7 +21,7 @@
                                 <%= link_to product.user.name.capitalize, product_path(product), class:"button-product"%>
                             </h6>
                         </div>
-                        <button class="button-heart btn-heart-index none"><i id="" class="button-like far fa-heart"></i></button>
+                        <button class="button-heart btn-heart-index none" data-number="<%= count %>"><i id='' class='button-like far fa-heart' ></i></button>
                     </div>
                 </div>
             </div>
