@@ -1,18 +1,23 @@
 const heart = () => {
-    const btn = document.querySelectorAll(".btn-heart-index")
-    const card = document.querySelectorAll(".card-product")
+    const button = document.querySelectorAll(".btn-heart-index")
+    const btns = document.querySelectorAll(".button-like");
+    const cards = document.querySelectorAll(".card-product")
 
-    card.forEach(e => {
-        e.addEventListener("mouseover", () => {
-            btn.forEach(b => {
-                b.classList.add("dis-block")
-                b.classList.remove("none")
+    cards.forEach(card => {
+        card.addEventListener("mouseover", () => {
+            button.forEach(btn => {
+                if (card.getAttribute('data-number') === btn.getAttribute('data-number')) {
+                    btn.classList.add("dis-block")
+                    btn.classList.remove("none")
+                }
             })
         })
-        e.addEventListener("mouseout", () => {
-            btn.forEach(b => {
-                b.classList.add("none")
-                b.classList.remove("dis-block")
+        card.addEventListener("mouseout", () => {
+            button.forEach(btn => {
+                if (card.getAttribute('data-number') === btn.getAttribute('data-number')) {
+                    btn.classList.add("none")
+                    btn.classList.remove("dis-block")
+                }
             })
         })
     })
