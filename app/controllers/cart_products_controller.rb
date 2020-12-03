@@ -17,6 +17,7 @@ class CartProductsController < ApplicationController
   def create
     array_id = []
     product = Product.find(params[:product_id])
+    # Order.create(product_id: product.id)
     @cart.cart_products.each{ |x| array_id << x.product_id }
     @cart_product = @cart.add_product(product)
     
