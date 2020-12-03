@@ -21,6 +21,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <%=link_to 'Mes produits', products_path, class:'dropdown-item' %>
+            <%=link_to 'Mes commandes', orders_path, class:'dropdown-item' %>
             <%=link_to 'Mes favoris', products_path, class:'dropdown-item' %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
           <% else %>
