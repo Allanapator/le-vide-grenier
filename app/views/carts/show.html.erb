@@ -48,10 +48,15 @@
                     <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
                     <p class="">Livraison sous 7 jours en moyenne</p>
                 </div>
-                <button class="button-cart"><i class="fas fa-lock"></i> <span class="ml-3 mr-3">VALIDER</span> <i class="fas fa-arrow-right"></i></button>
+                <%# link_to orders_path do %>
+                <%= simple_form_for @order_product do |f| %>
+                    <%= f.button :submit, class:"button-cart" %>
+                <% end %>
+                <%# end %>
                 <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
                 <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
             </div>
         </div>
     </div>
 </div>
+

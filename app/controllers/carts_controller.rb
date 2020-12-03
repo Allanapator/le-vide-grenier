@@ -2,6 +2,7 @@ class CartsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   def show
+    @order_product = OrderProduct.new
   end
 
   def index
