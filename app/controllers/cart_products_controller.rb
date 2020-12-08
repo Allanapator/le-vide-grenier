@@ -18,6 +18,7 @@ class CartProductsController < ApplicationController
     array_id = []
     product = Product.find(params[:product_id])
     # Order.create(product_id: product.id)
+    # @cart = Cart.create(user_id: current_user.id) if @cart.user_id.nil?
     @cart.cart_products.each{ |x| array_id << x.product_id }
     @cart_product = @cart.add_product(product)
     
@@ -55,6 +56,7 @@ class CartProductsController < ApplicationController
   def cart_product_params
     params.require(:cart_product).permit(:product_id, :cart_id)
   end
+
   # def set_cart
   #   @cart = Cart.find(params[:id])
   # end

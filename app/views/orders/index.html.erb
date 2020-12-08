@@ -1,24 +1,25 @@
 <h1 class="text-center mt-3"> Récapitulatif des commandes</h1>
+<p><%= OrderProduct.first %></p>
+
 
 <div class="mt-5 d-flex justify-content-center">
-            <div class="mb-5">
-                <% @order_products.each do |order_product| %>
-                    <div class="card-product-cart d-flex mb-2">
-                        <img class="image-cart" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
-                        <div class="info-in-my-cart">
-                            <div class="d-flex">
-                                <div class="info-product-in-cart">
-                                    <h5 class="title-product-cart"><%= link_to order_product.product.name.capitalize, product_path(order_product.product), class:"lt-product" %></h5>
-                                    <p class="artist-name-cart"><%= order_product.product.user.name.capitalize %></p>
-                                </div>
-                                <div class="ml-2 div-price-cart">
-                                    <p class="font-12">PRIX</p>
-                                    <p class="cart-price-product"><%= order_product.product.price %>€</p>
-                                </div>
-                                <div>
-                                </div>
-                            </div>
+    <div class="mb-5">
+        <% @order_products.each do |order_product| %>
+            <div class="card-product-cart d-flex mb-2">
+                <img class="image-cart" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
+                <div class="info-in-my-cart">
+                    <div class="d-flex">
+                        <div class="info-product-in-cart">
+                            <h5 class="title-product-cart"><%= link_to order_product.product.name.capitalize, product_path(order_product.product), class:"lt-product" %></h5>
+                            <p class="artist-name-cart"><%= order_product.product.user.name.capitalize %></p>
+                        </div>
+                        <div class="ml-2 div-price-cart">
+                            <p class="font-12">PRIX</p>
+                            <p class="cart-price-product"><%= order_product.product.price %>€</p>
                         </div>
                     </div>
-                <% end %>
+                </div>
             </div>
+        <% end %>
+    </div>
+</div>

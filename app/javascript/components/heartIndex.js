@@ -1,6 +1,5 @@
 const heart = () => {
     const button = document.querySelectorAll(".btn-heart-index")
-    const btns = document.querySelectorAll(".button-like");
     const cards = document.querySelectorAll(".card-product")
 
     cards.forEach(card => {
