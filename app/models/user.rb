@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :orders, dependent: :destroy
   has_many :products, dependent: :destroy
   has_one :cart
   # Include default devise modules. Others available are:

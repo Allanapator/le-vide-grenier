@@ -14,7 +14,7 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = Cart.create(user_id: current_user.id) if @cart.user_id.nil?
+    @cart = Cart.create(user_id: current_user.id)
   end
 
   def edit
