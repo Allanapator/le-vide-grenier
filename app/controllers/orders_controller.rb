@@ -11,7 +11,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new
+    user = current_user.cart.id
+    @order = Order.create(cart_id: user)
+    order = Order.find(params[:id])
+    @order_product = OrderProduct.create(product_id: 11, order_id: order.id)
   end
 
   def edit
