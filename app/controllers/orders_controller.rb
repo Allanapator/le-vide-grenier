@@ -5,20 +5,30 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
     @order_products = OrderProduct.all
-    raise
+    
   end
 
   def new
   end
 
   def create
-    user_cart = current_user.cart.id
-    @order = Order.create(cart_id: user_cart, user_id: current_user.id)
-    # @order_product = OrderProduct.create(product_id: product.id, order_id: @order.id)
-
-    current_user.cart.cart_products.each do |cart_product|
-      @order_product = OrderProduct.create(product_id: cart_product.product.id, order_id: @order.id)
+    if @cart.user_id.nil?
+      @cart.user_id = current_user.id
+      current_user.cart = @cart
     end
+
+    user_cart = current_user.cart.id
+
+    if @cart.cart_products.count > 0
+      @order = Order.create(cart_id: user_cart, user_id: current_user.id)
+    end
+    
+    current_user.cart.cart_products.each do |cart_product|
+      @order_product = OrderProduct.create(product_id: cart_product.product_id, order_id: @order.id)
+    end
+
+    redirect_to orders_path
+    current_user.cart.destroy
   end
 
   def edit
