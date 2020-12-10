@@ -11,14 +11,15 @@
                             <div class=" d-flex section justify-content-between p-0">
                                 <p class="">Commande effectué le <%= order.created_at.strftime("%d %B %Y")%></p>
                                 <div class="">
-                                    <p class="m-O">Total</p>
+                                    <p class="mb-1">Total</p>
                                     <% sum = 0 %>
                                     <% order.order_products.each do |x| %>
                                         <% sum += x.product.price %>
                                     <% end %>
-                                    <p class="gold"><%= sum %>€</p>
+                                    <p class="gold mb-1"><%= sum %>€</p>
                                 </div>
                                 <p><%= count += 1 %>/<%= current_user.orders.count%></p>
+                                <p><%= order.id %></p>
                             </div>
 
                             <div class="d-flex justify-content-between ">
@@ -38,7 +39,8 @@
                                     <p class="mb-2"><button class="button-order">Retourner un article</button></p>
                                     <p class="mb-2"><button class="button-order">Évaluer un vendeur</button></p>
                                     <p class="mb-2"><button class="button-order">Évaluer une oeuvre</button></p>
-                                    <p class="mb-2 mt-3"><button class="button-order-suivis">Détails de la commande</button></p>
+                                    <p class ="mb-2 mt-3"><%= link_to 'Détails de la commande', order_path(order) , class:"button-order-suivis"%></p>
+                                    
                                 </div>
                             </div>
                             

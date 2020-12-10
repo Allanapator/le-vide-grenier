@@ -164,6 +164,7 @@
 }
 
 .button-order-suivis {
+  padding: 3.5px 13.3px;
   text-decoration: none;
   min-width: 200px;
   background: grey;
@@ -174,6 +175,7 @@
   transition: 0.5s background ease;
 
   &:hover {
+    text-decoration: none;
     background: white;
     color: grey;
     border: 1px solid grey;
