@@ -142,6 +142,48 @@
   }
 }
 
+.button-order {
+  text-decoration: none;
+  min-width: 200px;
+  background: #D6AB75;
+  color: white;
+  border: 1px solid #D6AB75;
+  border-radius: 2px;
+  transition: 0.5s color ease;
+  transition: 0.5s background ease;
+
+  &:hover {
+    background: white;
+    color: #D6AB75;
+    border: 1px solid #D6AB75;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-order-suivis {
+  text-decoration: none;
+  min-width: 200px;
+  background: grey;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 2px;
+  transition: 0.5s color ease;
+  transition: 0.5s background ease;
+
+  &:hover {
+    background: white;
+    color: grey;
+    border: 1px solid grey;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 // NAVBAR LINKS //
 .dropdown-toggle {
   &:after {
