@@ -37,7 +37,7 @@
     <div class="info-product">
         <div class="section">
             <p class="info-price">PRIX</p>
-            <p class="price-show gold"><%= @product.price %>€</p>
+            <p class="price-show gold"><%= @product.price_cents %>€</p>
             <p class="livraison">Livraison & retour gratuits partout dans le monde</p>
             <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart' %>
             <div class="d-flex justify-content-center mt-3">
@@ -78,7 +78,7 @@
         <% @product.user.products[0..3].each do |product| %>
             <div class="other-product-div m-3">
                 <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"" %>
-                <p class="name-product-other"><%= product.name.capitalize %>, <%= product.price %>€</p>
+                <p class="name-product-other"><%= product.name.capitalize %>, <%= product.price_cents %>€</p>
             </div>
         <% end %>
     </div>
