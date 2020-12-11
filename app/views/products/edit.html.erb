@@ -5,7 +5,7 @@
                 <%= simple_form_for @productdo |f|%>
                     <%= f.input :name %>
                     <%= f.input :quantity %>
-                    <%= f.input :price %>
+                    <%= f.input :price_cents %>
                     <%= f.input :category %>
                     <%= f.input :photo, as: :file %>
                     <%= f.button :submit, class: "btn btn-primary" %>

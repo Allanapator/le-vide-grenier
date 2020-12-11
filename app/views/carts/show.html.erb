@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="ml-2 div-price-cart">
                                     <p class="font-12">PRIX</p>
-                                    <p class="cart-price-product"><%= cart_product.product.price %>€</p>
+                                    <p class="cart-price-product"><%= cart_product.product.price_cents %>€</p>
                                 </div>
                                 <div>
                                     <%= link_to cart_product_path(cart_product), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
