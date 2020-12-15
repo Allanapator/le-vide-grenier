@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
       @product = Product.new(product_params)
       @product.user = current_user
       if @product.valid?
+        @product.price = @product.price * 100
         @product.save!
         redirect_to product_path(@product)
       else

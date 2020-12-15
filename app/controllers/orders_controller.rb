@@ -1,4 +1,12 @@
 class OrdersController < ApplicationController
+  def stripe_amount(order)
+    sum = 0
+    order.order_products.each do |order_product|
+      sum += order_product.product.price
+    end
+    sum
+  end
+
   def show
     @order = Order.find(params[:id])
   end
@@ -27,6 +35,9 @@ class OrdersController < ApplicationController
     current_user.cart.cart_products.each do |cart_product|
       @order_product = OrderProduct.create(product_id: cart_product.product_id, order_id: @order.id)
     end
+
+    @order.amount = stripe_amount(@order)
+    @order.save
 
     redirect_to orders_path
     current_user.cart.destroy

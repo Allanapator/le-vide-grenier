@@ -3,12 +3,12 @@
         <div class="col-xs-12 col-md-12 col-lg-7 mx-auto">
             <div class="block-form">
                 <%= simple_form_for @product do |f|%>
-                    <%= f.input :name %>
-                    <%= f.input :price_cents %>
-                    <%= f.input :category %>
-                    <%= f.input :tag %>
+                    <%= f.input :name, label: 'Quel est le nom de votre produit ?', required: false %>
+                    <%= f.input :price_cents, label: 'Quel est son prix ?', required: false %>
+                    <%= f.input :category, label: 'De quel catégorie votre produit fait-il partit ? (peinture, sculpture, etc..)', required: false %>
+                    <%# f.input :tag, label: 'new_input_field_name' %>
                     <%= f.input :photo, as: :file %>
-                    <%= f.button :submit, class: "btn btn-primary" %>
+                    <%= f.button :submit, "Valider mon produit", class: "btn btn-primary" %>
                 <% end %>
             </div>
         </div>
