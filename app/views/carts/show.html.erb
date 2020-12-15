@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="ml-2 div-price-cart">
                                     <p class="font-12">PRIX</p>
-                                    <p class="cart-price-product"><%= cart_product.product.price_cents %>€</p>
+                                    <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
                                 </div>
                                 <div>
                                     <%= link_to cart_product_path(cart_product), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
@@ -43,14 +43,14 @@
 
             <div class="panier-total">
                 <p class="font-12">TOTAL</p>
-                <p class="gold price-total-cart"><%= @cart.total_price %> €</p>
+                <p class="gold price-total-cart"><%= humanized_money(@cart.total_price) %> €</p>
                 <div class="cart-livraison d-flex">
                     <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
                     <p class="">Livraison sous 7 jours en moyenne</p>
                 </div>
                 <%# link_to orders_path do %>
                 <%= simple_form_for @order do |f| %>
-                    <%= f.button :submit, class:"button-cart" %>
+                    <%= f.button :submit, "Valider mon panier", class:"button-cart" %>
                 <% end %>
                 <%# end %>
                 <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
