@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  require 'stripe'
   def stripe_amount(order)
     sum = 0
     order.order_products.each do |order_product|
@@ -29,7 +30,7 @@ class OrdersController < ApplicationController
     user_cart = current_user.cart.id
 
     if @cart.cart_products.count > 0
-      @order = Order.create(cart_id: user_cart, user_id: current_user.id)
+      @order = Order.create(cart_id: user_cart, user_id: current_user.id, state: "Pending")
     end
     
     current_user.cart.cart_products.each do |cart_product|
@@ -38,6 +39,20 @@ class OrdersController < ApplicationController
 
     @order.amount = stripe_amount(@order)
     @order.save
+
+    session = Stripe::Checkout::Session.create(
+    payment_method_types: ['card'],
+    line_items: [{
+      name: @order_product.product.name,
+      amount: @order_product.product.price_cents,
+      currency: 'eur',
+      quantity: 1
+    }],
+    success_url: order_url(@order),
+    cancel_url: cart_url(@cart)
+  )
+
+  @order.update(checkout_session_id: session.id)
 
     redirect_to orders_path
     current_user.cart.destroy
