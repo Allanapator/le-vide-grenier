@@ -32,12 +32,15 @@ class OrdersController < ApplicationController
 
     @order.amount = @order.stripe_amount(@order)
     @order.save
-
+    array_name_product = []
+    @order.order_products.each do |order_product|
+      array_name_product << order_product.product.name 
+    end
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
-      name: @order_product.product.name,
-      amount: @order_product.product.price_cents,
+      name: 'Total',
+      amount: @order.amount_cents,
       currency: 'eur',
       quantity: 1
     }],

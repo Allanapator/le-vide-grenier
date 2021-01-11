@@ -7,10 +7,11 @@
                 <div class="card-product-cart d-flex mb-3">
                     <div class="info-in-my-order">
                         <div class=" d-flex section justify-content-between p-0">
-                            <p class="">Commande effectué le <%= @order.created_at.strftime("%d %B %Y")%></p>
+                            <p class="">Commande effectué le <%= @order.created_at.strftime("%d %B %Y")%> <span class="badge badge-primary ml-3"><%= @order.state %></span></p>
                             <div class="">
                                 <p class="mb-1">Total</p>
                                 <p class="gold mb-1"><%= @order.amount %> €</p>
+                                
                             </div>
                         </div>
 
