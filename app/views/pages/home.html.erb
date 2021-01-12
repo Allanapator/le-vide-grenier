@@ -1,5 +1,10 @@
-<h2 class="text-center mt-3"> Discover our products </h2>
-<p class="text-center mt-3"> <%= Product.all.count %> products are available </p>
+<h2 class="text-center mt-3">Découvrez nos oeuvres</h2>
+<% if Product.all.count > 0 %>
+    <p class="text-center mt-3"> <%= Product.all.count %> oeuvres de disponible</p>
+<% else %>
+    <p class="text-center mt-3"> <%= Product.all.count %> oeuvre de disponible</p>
+<% end %>
+
 <div class="container mb-5">
     <div class="row">
         <% count = 0 %>
