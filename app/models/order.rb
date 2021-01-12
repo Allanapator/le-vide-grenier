@@ -13,6 +13,13 @@ class Order < ApplicationRecord
     current_product
   end
 
+  def stripe_amount(order)
+    sum = 0
+    order.order_products.each do |order_product|
+      sum += order_product.product.price
+    end
+    sum
+  end
   
 
 end

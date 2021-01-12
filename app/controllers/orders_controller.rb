@@ -1,15 +1,8 @@
 class OrdersController < ApplicationController
   require 'stripe'
-  def stripe_amount(order)
-    sum = 0
-    order.order_products.each do |order_product|
-      sum += order_product.product.price
-    end
-    sum
-  end
-
+  
   def show
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   def index
@@ -37,14 +30,17 @@ class OrdersController < ApplicationController
       @order_product = OrderProduct.create(product_id: cart_product.product_id, order_id: @order.id)
     end
 
-    @order.amount = stripe_amount(@order)
+    @order.amount = @order.stripe_amount(@order)
     @order.save
-
+    array_name_product = []
+    @order.order_products.each do |order_product|
+      array_name_product << order_product.product.name 
+    end
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
-      name: @order_product.product.name,
-      amount: @order_product.product.price_cents,
+      name: 'Total',
+      amount: @order.amount_cents,
       currency: 'eur',
       quantity: 1
     }],
@@ -54,7 +50,7 @@ class OrdersController < ApplicationController
 
   @order.update(checkout_session_id: session.id)
 
-    redirect_to orders_path
+  redirect_to new_order_payment_path(@order)
     current_user.cart.destroy
   end
 
