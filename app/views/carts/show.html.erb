@@ -5,7 +5,7 @@
                 <h2 class="">Mon Panier</h2>
                 <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @cart.cart_products.count %></h2>
             </div>
-            <%=link_to products_path, class:"button-return-shop" do %>
+            <%=link_to root_path, class:"button-return-shop" do %>
                 <p class="mb-0">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
             <% end %>
         </div>
