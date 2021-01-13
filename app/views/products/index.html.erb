@@ -1,6 +1,12 @@
-<div class="background-cart">
-    <%= link_to "Add", new_product_path(@product), class:"button-add"%>
+<div class="container back-height mb-4 mt-4">
+    <%= link_to "Ajouter", new_product_path(@product), class:"button-add"%>
+    <h2 class="text-center">Mes oeuvres</h2>
     <div class="row">
+
+        <% if @products.count == 0 %>
+            <p class="mt-3">Vous n'avez actuellement aucune oeuvre sur le site. Ajoutez en une en cliquant sur le bouton "Ajouter".</p>
+        <% end %>
+        
         <% count = 0 %>
         <% @products.each do |product|%>
             <% count += 1 %>
