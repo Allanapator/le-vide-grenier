@@ -1,7 +1,7 @@
-<h2 class="text-center">Sign up</h2>
-<div class="container">
+<div class="container back-height mt-4 mb-4">
   <div class="row">
     <div class="col-md-12"> 
+      <h2 class="text-center">Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -10,33 +10,41 @@
             <%= f.input :name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "name" } %>
+                        input_html: { autocomplete: "name" },
+                        required: false %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email" }%>
+                        input_html: { autocomplete: "email" },
+                        required: false %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" },
+                        required: false %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password" },
+                        required: false %>
             <%= f.input :city,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "city" } %>
+                        input_html: { autocomplete: "city" },
+                        required: false %>
             <%= f.input :sexe,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "sexe" } %>
+                        input_html: { autocomplete: "sexe" },
+                        required: false %>
             <%= f.input :age,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "age" } %>            
+                        input_html: { autocomplete: "age" },
+                        required: false %>            
             <%= f.input :description,
                         autofocus: true,
-                        input_html: { autocomplete: "description" } %>           
+                        input_html: { autocomplete: "description" },
+                        required: false %>           
           </div>
         </div>
         <div class="form-actions d-flex justify-content-center">
