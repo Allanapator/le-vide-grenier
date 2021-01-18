@@ -3,6 +3,15 @@
   height: 120px;
 }
 
+.navbar-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.margin-nav {
+  margin: 24px 16px 0px 16px;
+}
+
 .navbar-light .navbar-nav .nav-link {
   text-decoration: none;
   color: white;

@@ -1,71 +1,79 @@
-<div class="block d-flex">
+<div class="container d-flex">
     <!-- <%= link_to "All Products", products_path(@products), class:"button-add"%> -->
-    <div class="width-700">
-        <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-show-product mt-5 mr-5 mb-3">
-        <div class="ml-3 mr-3">
-            <div class= "section">
-                <h4 class="name-product"><%= @product.name.split(' ').each{ |x| x.capitalize! }.join(' ') %>, <span class="year"><%= @product.created_at.year %></span></h4>
-                <h5 class="name-artist gold"><%= @product.user.name.capitalize %></h5>
-            </div>
-            
-            <div class="section">
-                <div class="d-flex">
-                    <h4 class="gold mr-3"><i class="fas fa-vector-square"></i></h4>
-                    <h4 class="mb-3">À propos de cette oeuvre</h4>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius quisquam sed perspiciatis aliquam saepe molestias tempore suscipit assumenda non, delectus odit aut, expedita rerum soluta provident sequi commodi aliquid.</p>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <div>
-                    <div class="d-flex">
-                        <h4 class="gold mr-3"><i class="fas fa-quote-right"></i></h4>
-                        <h4 class="mb-3"><%= @product.user.name.capitalize %></h4>
+    <div class="row w-100">
+        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 d-flex justift-content-center">
+            <div class="width-700 mb-5">
+                <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-show-product mt-5 mr-5 mb-3">
+                <div class="ml-3 mr-3">
+                    <div class= "section">
+                        <h4 class="name-product"><%= @product.name.split(' ').each{ |x| x.capitalize! }.join(' ') %>, <span class="year"><%= @product.created_at.year %></span></h4>
+                        <h5 class="name-artist gold"><%= @product.user.name.capitalize %></h5>
                     </div>
-                    <p class="citation">" Chacun de mes tableaux est un pas en avant vers une harmonie que je recherche continuellement. "</p>
-                    <div class="d-flex justify-content-center mt-4">
-                        <a href=""><i class="icone-info-artist fab fa-facebook"></i></a>
-                        <a href=""><i class="icone-info-artist fab fa-pinterest"></i></a>
-                        <a href=""><i class="icone-info-artist fab fa-instagram"></i></a>
+                    
+                    <div class="section">
+                        <div class="d-flex">
+                            <h4 class="gold mr-3"><i class="fas fa-vector-square"></i></h4>
+                            <h4 class="mb-3">À propos de cette oeuvre</h4>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius quisquam sed perspiciatis aliquam saepe molestias tempore suscipit assumenda non, delectus odit aut, expedita rerum soluta provident sequi commodi aliquid.</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div class="d-flex">
+                                <h4 class="gold mr-3"><i class="fas fa-quote-right"></i></h4>
+                                <h4 class="mb-3"><%= @product.user.name.capitalize %></h4>
+                            </div>
+                            <p class="citation">" Chacun de mes tableaux est un pas en avant vers une harmonie que je recherche continuellement. "</p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href=""><i class="icone-info-artist fab fa-facebook"></i></a>
+                                <a href=""><i class="icone-info-artist fab fa-pinterest"></i></a>
+                                <a href=""><i class="icone-info-artist fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://img-4.linternaute.com/mGOFzl3YLSbU859r9cPd_Ai7o60=/1240x/smart/7a7db0744ead4b64a5254d35569ea458/ccmcms-linternaute/10984264.jpg" alt="" class="img-artist">    
                     </div>
                 </div>
-                <img src="https://img-4.linternaute.com/mGOFzl3YLSbU859r9cPd_Ai7o60=/1240x/smart/7a7db0744ead4b64a5254d35569ea458/ccmcms-linternaute/10984264.jpg" alt="" class="img-artist">    
             </div>
         </div>
-    </div>
 
-    <div class="info-product">
-        <div class="section">
-            <p class="info-price">PRIX</p>
-            <p class="price-show gold"><%= humanized_money(@product.price) %> €</p>
-            <p class="livraison">Livraison & retour gratuits partout dans le monde</p>
-            <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart' %>
-            <div class="d-flex justify-content-center mt-3">
-                <a href=""><i class="icone-info-price far fa-heart"></i></a>
-                <a href=""><i class="icone-info-price far fa-envelope"></i></a>
-                <a href=""><i class="icone-info-price fas fa-share-alt"></i></a>
-            </div>
-        </div>
-        <div class="text-center section">
-            <p class="gold livraison-icon"><i class="fas fa-truck"></i></p>
-            <p class="livraison">Livraison sous 7 jours en moyenne</p>
-        </div>
-        <div class="pd-20">
-            <div class="d-flex justify-content-around mb-2">
-                <p class="gold livraison-icon mr-5"><i class="fas fa-truck"></i></p>
-                <p>La livraison est assurée de bout en bout par LVG.</p>
-            </div>
-            <div class="d-flex justify-content-around mb-2">
-                <p class="gold livraison-icon mr-5"><i class="fas fa-box"></i></p>
-                <p>LVG applique le délai de rétractation de 14 jours, qui court à partir du jour de réception de l'oeuvre chez vous.</p>
-            </div>
-            <div class="d-flex justify-content-around mb-2">
-                <p class="gold livraison-icon mr-5"><i class="fas fa-lock"></i></p>
-                <p>Sur LVG, vous payez en toute sécurité par carte ou virement bancaires.</p>
-            </div>
-            <div class="d-flex justify-content-around mb-2">
-                <p class="gold livraison-icon mr-5"><i class="fas fa-check-circle"></i></p>
-                <p>LVG garantit sérieux et traçabilité.</p>
+        <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+            <div class="back-product">
+                <div class="info-product">
+                    <div class="section">
+                        <p class="info-price">PRIX</p>
+                        <p class="price-show gold"><%= humanized_money(@product.price) %> €</p>
+                        <p class="livraison">Livraison & retour gratuits partout dans le monde</p>
+                        <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart' %>
+                        <div class="d-flex justify-content-center mt-3">
+                            <a href=""><i class="icone-info-price far fa-heart"></i></a>
+                            <a href=""><i class="icone-info-price far fa-envelope"></i></a>
+                            <a href=""><i class="icone-info-price fas fa-share-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center section">
+                        <p class="gold livraison-icon"><i class="fas fa-truck"></i></p>
+                        <p class="livraison">Livraison sous 7 jours en moyenne</p>
+                    </div>
+                    <div class="pd-20">
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="gold livraison-icon mr-5"><i class="fas fa-truck"></i></p>
+                            <p>La livraison est assurée de bout en bout par LVG.</p>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="gold livraison-icon mr-5"><i class="fas fa-box"></i></p>
+                            <p>LVG applique le délai de rétractation de 14 jours, qui court à partir du jour de réception de l'oeuvre chez vous.</p>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="gold livraison-icon mr-5"><i class="fas fa-lock"></i></p>
+                            <p>Sur LVG, vous payez en toute sécurité par carte ou virement bancaires.</p>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <p class="gold livraison-icon mr-5"><i class="fas fa-check-circle"></i></p>
+                            <p>LVG garantit sérieux et traçabilité.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
