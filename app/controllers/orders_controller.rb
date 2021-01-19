@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
     @order.order_products.each do |order_product|
       array_name_product << order_product.product.name 
     end
+    
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
