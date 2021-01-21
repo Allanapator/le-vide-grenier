@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
     user_cart = current_user.cart.id
 
     if @cart.cart_products.count > 0
-      @order = Order.create(cart_id: user_cart, user_id: current_user.id, state: "Pending")
+      @order = Order.create(cart_id: user_cart, user_id: current_user.id, state: "En attente")
     end
     
     current_user.cart.cart_products.each do |cart_product|
