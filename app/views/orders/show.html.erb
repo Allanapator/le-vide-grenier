@@ -1,12 +1,17 @@
 <div class="background-cart">
     <div class="container">
-        <h1 class="text-center pt-5 section"> Récapitulatif de la commande</h1>
+        <div class="d-flex justify-content-between align-items-end section">
+            <h2 class="mb-0 pt-5 ml-3 d-flex align-items-center"> Récapitulatif de la commande</h2>
+            <%=link_to orders_path, class:"button-return-shop mr-3" do %>
+                <p class="mb-0 ">Retour aux commandes <i class="fas fa-arrow-right ml-2"></i></p>
+            <% end %>
+        </div>
         <div class="mt-5 d-flex justify-content-center">
             <div class="mb-5">
 
                 <div class="card-product-cart d-flex mb-3">
                     <div class="info-in-my-order">
-                        <div class=" d-flex section justify-content-between p-0">
+                        <div class=" d-flex section justify-content-between align-items-end p-0">
                             <p class="">Commande effectué le <%= @order.created_at.strftime("%d %B %Y")%> <span class="badge badge-primary ml-3"><%= @order.state %></span></p>
                             <div class="">
                                 <p class="mb-1">Total</p>

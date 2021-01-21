@@ -2,19 +2,19 @@
     <div class="container ">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center section">
-                    <div class="header-cart d-flex">
+                <div class="d-flex justify-content-between align-items-end section">
+                    <div class="ml-3 header-cart d-flex">
                         <h2 class="">Mon Panier</h2>
                         <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @cart.cart_products.count %></h2>
                     </div>
                     <%=link_to root_path, class:"button-return-shop" do %>
-                        <p class="mb-0">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
+                        <p class="mb-0 mr-3">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %>
                 </div>
             </div>
 
             <div class="mt-5 flex-cart">
-                <div class="col-xl-9 col-lg-12">
+                <div class="col-xl-9 col-lg-12 p-0">
                     <div class="mb-5 mr-2">
                         <% @cart.cart_products.each do |cart_product| %>
                             <div class="card-product-cart d-flex">
@@ -46,9 +46,15 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-12">
+
+                <div class="col-xl-3 col-lg-12 p-0">
                     <div class="panier-total">
-                        <p class="font-12">TOTAL</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="">TOTAL</h5>
+                            <%= link_to cart_path(@cart), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cette commande ?"}  do %>
+                                <p><i class="gold icone-cart far fa-trash-alt"></i></p>
+                            <% end %>
+                        </div>
                         <p class="gold price-total-cart"><%= humanized_money(@cart.total_price) %> €</p>
                         <div class="cart-livraison d-flex">
                             <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>

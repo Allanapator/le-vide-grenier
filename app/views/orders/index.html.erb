@@ -1,6 +1,11 @@
 <div class="background-cart">
     <div class="container">
-        <h1 class="text-center pt-5 section"> Récapitulatif des commandes</h1>
+        <div class="d-flex justify-content-between align-items-end section">
+            <h2 class="ml-3 mb-0 d-flex align-items-center pt-5"> Mes commandes</h2>
+            <%=link_to root_path, class:"button-return-shop mr-3" do %>
+                <p class=" mb-0">Retour au shopping <i class="fas fa-arrow-right ml-2"></i></p>
+            <% end %> 
+        </div>
         <div class="block-order mt-5 d-flex justify-content-center">
             <div class="row">
                 <div class="mb-5">
@@ -10,13 +15,16 @@
                             <div class="card-product-cart d-flex mb-3">
                                 <div class="info-in-my-order">
 
-                                    <div class=" d-flex section justify-content-between p-0">
+                                    <div class=" d-flex section justify-content-between align-items-end p-0">
                                         <p class="">Commande effectué le <%= order.created_at.strftime("%d %B %Y")%><span class="badge badge-primary ml-3"><%= order.state %></span></p>
                                         <div class="">
                                             <p class="mb-1">Total</p>
                                             <p class="gold mb-1"><%= order.amount %> €</p>
                                         </div>
                                         <p><%= count += 1 %>/<%= current_user.orders.count %></p>
+                                        <%= link_to order_path(order), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cette commande ?"}  do %>
+                                            <p><i class="gold icone-cart far fa-trash-alt"></i></p>
+                                        <% end %>
                                     </div>
 
                                     <div class="d-flex justify-content-between ">
