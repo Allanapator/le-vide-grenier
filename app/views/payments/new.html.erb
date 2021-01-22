@@ -1,71 +1,79 @@
 <div class="background-cart">
     <div class="container ">
-        <div class="d-flex justify-content-between align-items-center section">
-            <div class="header-cart d-flex">
-                <h2 class="">Résumé de la commande</h2>
-                <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @order.order_products.count %></h2>
-            </div>
-            <%#=link_to products_path, class:"button-return-shop" do %>
-                <%# <p class="mb-0">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p> %>
-            <%# end %>
-        </div>
-
-        <div class="mt-5 d-flex justify-content-between">
-            <div class="mb-5">
-                <% @order.order_products.each do |order_product| %>
-                    <div class="card-product-cart d-flex">
-                        <img class="image-cart" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
-                        <div class="info-in-my-cart">
-                            <div class="d-flex">
-                                <div class="info-product-in-cart">
-                                    <h5 class="title-product-cart lt-product"><%= order_product.product.name.capitalize %></h5>
-                                    <p class="artist-name-cart"><%= order_product.product.user.name.capitalize %></p>
-                                </div>
-                                <div class="ml-2 div-price-cart">
-                                    <p class="font-12">PRIX</p>
-                                    <p class="cart-price-product"><%= humanized_money order_product.product.price %> €</p>
-                                </div>
-                                <%# <div> %>
-                                    <%# link_to cart_product_path(cart_product), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
-                                        <%# <p><i class="gold icone-cart far fa-trash-alt"></i></p> %>
-                                    <%# end %>
-                                    <%# <button class="button-heart"><i id="" class="far fa-heart button-like-cart gold "></i></button> %>
-                                <%# </div> %>
-                            </div>
-                            <%# <div class="form-check checkbox check-pad">
-                                <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
-                                <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
-                            </div> %>
-                        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-end section">
+                    <div class="header-cart d-flex">
+                        <h2 class="">Résumé de la commande</h2>
+                        <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @order.order_products.count %></h2>
                     </div>
-                <% end %>
+                    <%=link_to root_path, class:"button-return-shop" do %>
+                        <p class="mb-0 mr-3">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
+                    <% end %>
+                </div>
             </div>
 
-            <div class="panier-total">
-                <h5 class="font-12">TOTAL</h5>
-                <p class="gold price-total-cart"><%= @order.amount %> €</p>
-                <div class="cart-livraison d-flex">
-                    <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
-                    <p class="">Livraison sous 7 jours en moyenne</p>
+            <div class="mt-5 d-flex justify-content-between">
+                <div class="col-xl-9 col-lg-12 p-0">
+                    <div class="mb-5">
+                        <% @order.order_products.each do |order_product| %>
+                            <div class="card-product-cart d-flex">
+                                <img class="image-cart" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
+                                <div class="info-in-my-cart">
+                                    <div class="d-flex">
+                                        <div class="info-product-in-cart">
+                                            <h5 class="title-product-cart lt-product"><%= order_product.product.name.capitalize %></h5>
+                                            <p class="artist-name-cart"><%= order_product.product.user.name.capitalize %></p>
+                                        </div>
+                                        <div class="ml-2 div-price-cart">
+                                            <p class="font-12">PRIX</p>
+                                            <p class="cart-price-product"><%= humanized_money order_product.product.price %> €</p>
+                                        </div>
+                                        <%# <div> %>
+                                            <%# link_to cart_product_path(cart_product), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
+                                                <%# <p><i class="gold icone-cart far fa-trash-alt"></i></p> %>
+                                            <%# end %>
+                                            <%# <button class="button-heart"><i id="" class="far fa-heart button-like-cart gold "></i></button> %>
+                                        <%# </div> %>
+                                    </div>
+                                    <%# <div class="form-check checkbox check-pad">
+                                        <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
+                                        <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
+                                    </div> %>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
-                <%# link_to orders_path do %>
-                <button id="pay" class="button-cart">Payer</button>
-                <script src="https://js.stripe.com/v3/"></script>
-                <script>
-                  const paymentButton = document.getElementById('pay');
-                  paymentButton.addEventListener('click', () => {
-                    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-                    stripe.redirectToCheckout({
-                      sessionId: '<%= @order.checkout_session_id %>'
-                    });
-                  });
-                </script>
-                <%# simple_form_for @order do |f| %>
-                    <%# f.button :submit, "Valider mon panier", class:"button-cart" %>
-                <%# end %>
-                <%# end %>
-                <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
-                <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
+
+                <div class="col-xl-3 col-lg-12 p-0">
+                    <div class="panier-total">
+                        <h5 class="font-12">TOTAL</h5>
+                        <p class="gold price-total-cart"><%= @order.amount %> €</p>
+                        <div class="cart-livraison d-flex">
+                            <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
+                            <p class="">Livraison sous 7 jours en moyenne</p>
+                        </div>
+                        <%# link_to orders_path do %>
+                        <button id="pay" class="button-cart">Payer</button>
+                        <script src="https://js.stripe.com/v3/"></script>
+                        <script>
+                        const paymentButton = document.getElementById('pay');
+                        paymentButton.addEventListener('click', () => {
+                            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                            stripe.redirectToCheckout({
+                            sessionId: '<%= @order.checkout_session_id %>'
+                            });
+                        });
+                        </script>
+                        <%# simple_form_for @order do |f| %>
+                            <%# f.button :submit, "Valider mon panier", class:"button-cart" %>
+                        <%# end %>
+                        <%# end %>
+                        <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
+                        <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
