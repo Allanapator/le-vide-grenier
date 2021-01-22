@@ -56,9 +56,21 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    # @order = Order.find(params[:id])
+    # id = @order.cart_id
+    # cart = Cart.all.find_by(id: id)
+    # if cart.state == "Payée"
+    #   cart.destroy
+    # end
   end
 
   def update
+    # @order = Order.find(params[:id])
+    # id = @order.cart_id
+    # cart = Cart.all.find_by(id: id)
+    # if cart.state == "Payée"
+    #   cart.destroy
+    # end
   end
 
   def destroy
