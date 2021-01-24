@@ -25,13 +25,13 @@ class CartProductsController < ApplicationController
     
     if array_id.include?(product.id)
       redirect_to root_path
-      flash[:alert] = "This product is already in your cart"
+      flash[:alert] = "Ce produit est déjà dans votre panier"
     elsif @cart_product.save
       redirect_to @cart_product.cart
-      flash[:notice] = "Product added successfully"
+      flash[:notice] = "Le produit a bien été ajouté au panier"
     else
       render :new
-      flash.now[:alert] = "Your product has not been added .." 
+      flash.now[:alert] = "Votre produit n'a pas été ajouté" 
     end
   end
 
