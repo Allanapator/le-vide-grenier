@@ -30,6 +30,7 @@
 }
 
 .section-white {
+    width: 100%;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
     margin-bottom: 15px;
     padding-bottom: 20px;
@@ -68,4 +69,10 @@
         text-decoration: none;
         color: white;
     }
+}
+
+.flex-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

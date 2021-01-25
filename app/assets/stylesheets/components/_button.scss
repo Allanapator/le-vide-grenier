@@ -29,16 +29,15 @@
   height: 36px;
   border: none;
   padding: 0;
-  background: #EFEFEF;
+  background: #d5a870;
   font-size: 16px;
   border-radius: 50%;
-  color: black;
-  transition: 0.5s color ease;
-  transition: 0.5s background ease;
+  color: white;
+  opacity: 0.8;
+  transition: 0.5s opacity ease;
 
   &:hover {
-    background: #d5a870;
-    color: white;
+    opacity: 1;
   }
 
   &:focus {
