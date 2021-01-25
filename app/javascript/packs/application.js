@@ -38,3 +38,30 @@ document.addEventListener("turbolinks:load", () => {
   buttonSearch();
   buttonFavCart();
 });
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#del-button', {
+  title: "Êtes-vous sûre de vouloir supprimer ce panier ?",
+  text: "Une fois supprimé, vous ne pourrez plus récupérer ce panier!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}, (value) => {
+  if (value) {
+    const link = document.querySelector("#del-button-hid");
+    link.click();
+  }
+});
+
+// initSweetalert('#btn-del', {
+//   title: "Êtes-vous sûre de vouloir supprimer ce produit ?",
+//   icon: "warning",
+//   buttons: true,
+//   dangerMode: true,
+// }, (value) => {
+//   if (value) {
+//     const link = document.querySelectorAll("#del-btn-product");
+//     link.click();
+//   }
+// });
