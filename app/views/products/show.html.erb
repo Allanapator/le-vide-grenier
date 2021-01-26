@@ -1,7 +1,7 @@
 <body class="body-bg">
-    <div class="container">
+    <div class="container h-100">
         <!-- <%= link_to "All Products", products_path(@products), class:"button-add"%> -->
-        <div class="row w-100 flex-product">
+        <div class="row w-100 h-100 flex-product">
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
                 <div class="width-700 mb-5">
                     <% if @product.photo.attachment.nil? %>
@@ -89,8 +89,16 @@
             <div class="d-flex p-2" style="justify-content: space-around";>
                 <% @product.user.products[0..3].each do |product| %>
                     <div class="other-product-div m-3">
-                        <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"" %>
-                        <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
+                        <% if product.photo.attachment.nil? %>
+                            <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image" %>
+                            <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
+                        <% else %>
+                            <%= link_to product_path(product) do %>
+                                <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
+                                <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
+                            <% end %>
+                        <% end %>
+                        
                     </div>
                 <% end %>
             </div>
