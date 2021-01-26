@@ -1,6 +1,8 @@
 .image-show-product {
-    width: 700px;
-    height: auto;
+    width: auto;
+    max-width: 650px;
+    height: 550px;
+    object-fit: cover;
 }
 
 .img-artist {
