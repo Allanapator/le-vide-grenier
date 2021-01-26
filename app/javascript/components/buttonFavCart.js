@@ -1,12 +1,12 @@
 const buttonFavCart = () => {
-    const btn = document.querySelectorAll(".button-like-cart");
+    const btn = document.querySelectorAll(".button-heart-cart");
 
     btn.forEach(e => {
         e.addEventListener('click', () => {
-            if (e.className.includes('far fa-heart')) {
-                e.className = "button-like-cart gold fas fa-heart";
+            if (e.innerHTML.includes('far fa-heart')) {
+                e.innerHTML = `<i id="" class="button-like-cart fas fa-heart" ></i>`
             } else {
-                e.className = "button-like-cart gold far fa-heart";
+                e.innerHTML = `<i id="" class="button-like-cart far fa-heart" ></i>`
             }
         })
     })
