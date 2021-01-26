@@ -18,7 +18,11 @@
                     <div class="mb-5 mr-2">
                         <% @cart.cart_products.each do |cart_product| %>
                             <div class="card-product-cart d-flex">
-                                <img class="image-cart" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
+                                <% if cart_product.product.photo.attachment.nil? %>
+                                    <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-cart">
+                                <% else%>
+                                    <%= cl_image_tag cart_product.product.photo.key, class: "image-cart", crop: :fill %>
+                                <% end %>
                                 <div class="info-in-my-cart">
                                     <div class="d-flex">
                                         <div class="info-product-in-cart">
@@ -36,10 +40,10 @@
                                             <button class="button-heart"><i id="" class="far fa-heart button-like-cart gold "></i></button>
                                         </div>
                                     </div>
-                                    <div class="form-check checkbox check-pad">
+                                    <%# <div class="form-check checkbox check-pad">
                                         <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
                                         <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
-                                    </div>
+                                    </div> %>
                                 </div>
                             </div>
                         <% end %>
