@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    unless product.user == current_user
+    unless @product.user.id == current_user.id
       flash[:alert] = "You can't destroy this product"
       redirect_to products_path
     else
@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :category, :price_cents, :quantity, :tag, :photo)
+    params.require(:product).permit(:name, :category, :price_cents, :quantity, :tag, :photo, :description)
   end
 
 end

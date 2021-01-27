@@ -34,8 +34,9 @@
                             <div class="d-flex justify-content-between mt-1">
                                 <p class="card-text category"><%# product.category.capitalize %></p>
                             </div>
-                            <h6 class="card-title mt-1">
+                            <h6 class="card-title mt-1 d-flex justify-content-between">
                                 <%= link_to product.user.name.capitalize, product_path(product), class:"button-product"%>
+                                <%= link_to "X", product_path(product), method: :delete, class:"", id:"" %>
                             </h6>
                         </div>
                         <button class="button-heart btn-heart-index none" data-number="<%= count %>"><i id="" class="button-like far fa-heart"></i></button>
