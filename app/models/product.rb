@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   # has_many :cart_products, dependent: :nullify
   # has_many :order_products, dependent: :nullify
   has_many :cart_products
+  has_many :order_products, dependent: :destroy
   has_many :orders, through: :order_product
   validates :name, presence: true
   validates :category, presence: true
