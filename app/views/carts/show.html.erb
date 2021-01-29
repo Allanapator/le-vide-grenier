@@ -13,67 +13,70 @@
                 </div>
             </div>
 
-            <div class="mt-5 flex-cart">
-                <div class="col-xl-9 col-lg-12 p-0">
-                    <div class="mb-5 mr-2">
-                        <% @cart.cart_products.each do |cart_product| %>
-                            <div class="card-product-cart d-flex">
-                                <% if cart_product.product.photo.attachment.nil? %>
-                                    <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-cart">
-                                <% else%>
-                                    <%= cl_image_tag cart_product.product.photo.key, class: "image-cart", crop: :fill %>
-                                <% end %>
-                                <div class="info-in-my-cart">
-                                    <div class="d-flex">
-                                        <div class="info-product-in-cart">
-                                            <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
-                                            <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
+            <% unless @cart.cart_products.count == 0 %>
+                <div class="mt-5 flex-cart">
+                    <div class="col-xl-9 col-lg-12 p-0">
+                        <div class="mb-5 mr-2">
+                            <% @cart.cart_products.each do |cart_product| %>
+                                <div class="card-product-cart d-flex">
+                                    <% if cart_product.product.photo.attachment.nil? %>
+                                        <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-cart">
+                                    <% else%>
+                                        <%= cl_image_tag cart_product.product.photo.key, class: "image-cart", crop: :fill %>
+                                    <% end %>
+                                    <div class="info-in-my-cart">
+                                        <div class="d-flex">
+                                            <div class="info-product-in-cart">
+                                                <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
+                                                <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
+                                            </div>
+                                            <div class="ml-2 div-price-cart">
+                                                <p class="font-12">PRIX</p>
+                                                <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
+                                            </div>
+                                            <div>
+                                                <%= link_to cart_product_path(cart_product), method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
+                                                    <i class="gold icone-cart far fa-trash-alt d-flex justify-content-center mb-3"></i>
+                                                <% end %>
+                                                <button class="button-heart-cart d-flex justify-content-center"><i id="" class="far fa-heart button-like-cart gold "></i></button>
+                                            </div>
                                         </div>
-                                        <div class="ml-2 div-price-cart">
-                                            <p class="font-12">PRIX</p>
-                                            <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
-                                        </div>
-                                        <div>
-                                            <%= link_to cart_product_path(cart_product), method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
-                                                <i class="gold icone-cart far fa-trash-alt d-flex justify-content-center mb-3"></i>
-                                            <% end %>
-                                            <button class="button-heart-cart d-flex justify-content-center"><i id="" class="far fa-heart button-like-cart gold "></i></button>
-                                        </div>
+                                        <%# <div class="form-check checkbox check-pad">
+                                            <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
+                                            <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
+                                        </div> %>
                                     </div>
-                                    <%# <div class="form-check checkbox check-pad">
-                                        <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
-                                        <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
-                                    </div> %>
                                 </div>
+                            <% end %>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-3 col-lg-12 p-0">
+                        <div class="panier-total">
+                            <div class="d-flex justify-content-between align-items-end pb-3">
+                                <h5 class="m-0 p-0">TOTAL</h5>
+                                <%= link_to "", cart_path(@cart), method: :delete, class:"hidden", id:"del-button-hid" %>
+                                <button id="del-button" class="button-hid"><i class="gold icone-cart far fa-trash-alt"></i></button>
+                                
                             </div>
-                        <% end %>
-                    </div>
-                </div>
-
-
-                <div class="col-xl-3 col-lg-12 p-0">
-                    <div class="panier-total">
-                        <div class="d-flex justify-content-between align-items-end pb-3">
-                            <h5 class="m-0 p-0">TOTAL</h5>
-                            <%= link_to "", cart_path(@cart), method: :delete, class:"hidden", id:"del-button-hid" %>
-                            <button id="del-button" class="button-hid"><i class="gold icone-cart far fa-trash-alt"></i></button>
+                            <p class="gold price-total-cart"><%= humanized_money(@cart.total_price) %> €</p>
+                            <div class="cart-livraison d-flex">
+                                <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
+                                <p class="">Livraison sous 7 jours en moyenne</p>
+                            </div>
+                            <%# link_to orders_path do %>
+                            <%= simple_form_for @order do |f| %>
+                                <%= f.button :submit, "Valider mon panier", class:"button-cart" %>
+                            <% end %>
                             
+                            <%# end %>
+                            <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
+                            <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                         </div>
-                        <p class="gold price-total-cart"><%= humanized_money(@cart.total_price) %> €</p>
-                        <div class="cart-livraison d-flex">
-                            <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
-                            <p class="">Livraison sous 7 jours en moyenne</p>
-                        </div>
-                        <%# link_to orders_path do %>
-                        <%= simple_form_for @order do |f| %>
-                            <%= f.button :submit, "Valider mon panier", class:"button-cart" %>
-                        <% end %>
-                        <%# end %>
-                        <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
-                        <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                     </div>
                 </div>
-            </div>
+            <% end %>
         </div>
     </div>
 </div>

@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
     )
 
     @order.update(checkout_session_id: session.id)
-
+    
     redirect_to new_order_payment_path(@order)
     
     # current_user.cart.destroy
@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
     # @order = Order.find(params[:id])
     # id = @order.cart_id
     # cart = Cart.all.find_by(id: id)
-    # if cart.state == "Payée"
+    # if @order.state == "Payée"
     #   cart.destroy
     # end
   end
@@ -69,7 +69,7 @@ class OrdersController < ApplicationController
     # @order = Order.find(params[:id])
     # id = @order.cart_id
     # cart = Cart.all.find_by(id: id)
-    # if cart.state == "Payée"
+    # if @order.state == "Payée"
     #   cart.destroy
     # end
   end
