@@ -6,6 +6,7 @@ class CartsController < ApplicationController
 
   def show
     @order = Order.new
+    authorize @cart
   end
 
   def index
@@ -13,22 +14,27 @@ class CartsController < ApplicationController
 
   def new
     @cart = Cart.new(cart_params)
+    authorize @cart
   end
 
   def create
     @cart = Cart.create(user_id: current_user.id)
+    authorize @cart
   end
 
   def edit
+    authorize @cart
   end
 
   def update
+    authorize @cart
   end
 
   def destroy
     @cart.destroy #if @cart.id === session[:cart_id]
     #session[:cart_id] = nil
     redirect_to root_path
+    authorize @cart
   end
 
   private

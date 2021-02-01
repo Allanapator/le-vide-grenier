@@ -67,8 +67,19 @@
                             </div>
                             <%# link_to orders_path do %>
                             <%= simple_form_for @order do |f| %>
-                                <%= f.button :submit, "Valider mon panier", class:"button-cart" %>
+                                <%= f.button :submit, "Valider mon panier", class:"button-cart mb-3", id:"btn-pay" %>
                             <% end %>
+                            <button id="pay" class="none button-cart">Payer</button>
+                            <script src="https://js.stripe.com/v3/"></script>
+                            <script>
+                            const paymentButton = document.getElementById('pay');
+                            paymentButton.addEventListener('click', () => {
+                                const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                                stripe.redirectToCheckout({
+                                sessionId: '<%= @order.checkout_session_id %>'
+                                });
+                            });
+                            </script>
                             
                             <%# end %>
                             <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>

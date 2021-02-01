@@ -25,6 +25,7 @@ import "bootstrap";
 import { button } from '../components/buttonFavorite';
 import { buttonFavCart } from '../components/buttonFavCart';
 import { buttonSearch } from '../components/buttonSearch';
+import { btnPay } from '../components/btnPay';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { heart } from '../components/heartIndex';
 
@@ -34,6 +35,7 @@ import { heart } from '../components/heartIndex';
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // btnPay();
   button();
   heart();
   buttonSearch();
