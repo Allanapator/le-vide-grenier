@@ -10,4 +10,8 @@ class User < ApplicationRecord
   validates :sexe, presence: true
   validates :age, presence: true
   validates :name, presence: true
+  validates :email, presence: true
+  validates :address, presence: true
+  validates :postal, presence: true
+  validates :birthday, presence: true
 end

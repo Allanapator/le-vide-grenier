@@ -1,54 +1,67 @@
-<div class="container back-height mt-4 mb-4">
+<div class="container  back-height mt-4 mb-4">
   <div class="row">
-    <div class="col-md-12"> 
-      <h2 class="text-center">Sign up</h2>
+    <div class="col-md-12">
+      <div class="section">
+        <h2 class="text-center mb-0">Je créer mon compte</h2>
+      </div>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="d-flex justify-content-center">
-          <div class="form-inputs col-sm-12 col-md-9 col-lg-6">
+          <div class="form-inputs col-sm-12 col-md-9 col-lg-9">
             <%= f.input :name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "name" },
+                        label: "Nom",
                         required: false %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email" },
+                        label: "Email",
                         required: false %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" },
+                        label: "Mot de passe",
                         required: false %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" },
+                        label: "Validez le mot de passe",
                         required: false %>
+            <%= f.input :sexe,
+                        as: :date,
+                        required: true,
+                        autofocus: true,
+                        label: "Sexe",
+                        required: false %>
+            <%= f.input :birthday,
+                        required: true,
+                        autofocus: true,
+                        label: "Date de naissance",
+                        required: false %>
+            <%= f.input :address,
+                        required: true,
+                        autofocus: true,
+                        label: "Addresse",
+                        required: false %>  
             <%= f.input :city,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "city" },
+                        label: "Ville",
                         required: false %>
-            <%= f.input :sexe,
+            <%= f.input :postal,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "sexe" },
-                        required: false %>
-            <%= f.input :age,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "age" },
-                        required: false %>            
+                        label: "Code postale",
+                        required: false %>              
             <%= f.input :description,
                         autofocus: true,
-                        input_html: { autocomplete: "description" },
+                        label: "Description",
                         required: false %>           
           </div>
         </div>
         <div class="form-actions d-flex justify-content-center">
-          <%= f.button :submit, "Sign up", class:"btn btn-dark mt-3" %>
+          <%= f.button :submit, "Sign up", class:"btn btn-dark mt-3 mb-3" %>
         </div>
       <% end %>
       
