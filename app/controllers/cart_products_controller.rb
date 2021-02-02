@@ -5,14 +5,16 @@ class CartProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def show
+    authorize @cart_product
   end
   
   def index
-    @cart_products = CartProduct.all
+    @cart_products = policy_scope(CartProduct)
   end
 
   def new
     @cart_product = CartProduct.new
+    authorize @cart_product
   end
 
   def create
@@ -33,18 +35,22 @@ class CartProductsController < ApplicationController
       render :new
       flash.now[:alert] = "Votre produit n'a pas été ajouté" 
     end
+    authorize @cart_product
   end
-
+  
   def edit
+    authorize @cart_product
   end
 
   def update
+    authorize @cart_product
   end
 
   def destroy
     @cart = Cart.find(session[:cart_id])
     @cart_product.destroy
     redirect_to cart_path(@cart)
+    authorize @cart_product
   end
 
 

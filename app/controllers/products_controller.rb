@@ -3,18 +3,21 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @products = current_user.products
+    @products = policy_scope(current_user.products)
   end
 
   def search
     @products = Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%")
+    authorize @product
   end
 
   def show
+    authorize @product
   end
   
   def new
     @product = Product.new
+    authorize @product
   end
   
   def create
@@ -32,12 +35,15 @@ class ProductsController < ApplicationController
         render :new
       end
     end
+    authorize @product
   end
-
+  
   def edit
+    authorize @product
   end
-
+  
   def update
+    authorize @product
   end
 
   def destroy
@@ -50,8 +56,9 @@ class ProductsController < ApplicationController
       flash[:notice] = "This product has been deleted"
       redirect_to products_path
     end
+    authorize @product
   end
-
+  
   private
   
   def set_product

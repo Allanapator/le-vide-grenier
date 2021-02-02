@@ -1,13 +1,15 @@
 class OrderProductsController < ApplicationController
   def show
+    authorize @order_product
   end
 
   def index
-    @order_products = OrderProduct.all
+    @order_products = policy_scope(OrderProduct)
   end
 
   def new
   end
+  authorize @order_product
 
   def create
     # array_id = []
@@ -23,15 +25,19 @@ class OrderProductsController < ApplicationController
     else 
       flash[:alert] = "!!!!"
     end
+    authorize @order_product
   end
 
   def edit
+    authorize @order_product
   end
 
   def update
+    authorize @order_product
   end
 
   def destroy
+    authorize @order_product
   end
 
   private

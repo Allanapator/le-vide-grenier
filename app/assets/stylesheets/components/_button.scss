@@ -120,6 +120,23 @@
   }
 }
 
+.button-cart-vendu {
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #696969;
+  color: white;
+  border: 1px solid transparent;
+  transition: 0.5s background ease;
+  opacity: 0.5;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
 .button-pay {
   width: 200px;
 }
