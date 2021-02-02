@@ -30,6 +30,7 @@
                                         <% arr << order_product.product_id %>
                                     <% end %>
                                 <% end %>
+                                
                                 <% if arr.include?(product.id) %>
                                     <p class="card-text price text-danger">VENDU</p>
                                 <% else %>
