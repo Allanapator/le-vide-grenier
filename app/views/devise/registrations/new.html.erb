@@ -29,12 +29,17 @@
                         label: "Validez le mot de passe",
                         required: false %>
             <%= f.input :sexe,
-                        as: :date,
+                        as: :select,
                         required: true,
                         autofocus: true,
                         label: "Sexe",
+                        collection: User.sexes,
                         required: false %>
             <%= f.input :birthday,
+                        as: :date,
+                        start_year: Date.today.year - 90,
+                        end_year: Date.today.year, 
+                        order: [:day, :month, :year],
                         required: true,
                         autofocus: true,
                         label: "Date de naissance",

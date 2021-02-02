@@ -14,4 +14,6 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :postal, presence: true
   validates :birthday, presence: true
+
+  enum sexe: { homme: 1, femme: 2 }
 end

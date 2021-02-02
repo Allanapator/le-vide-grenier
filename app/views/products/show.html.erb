@@ -49,10 +49,24 @@
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 back-product">
                 <div class="info-product pt-4">
                     <div class="section">
-                        <p class="info-price">PRIX</p>
-                        <p class="price-show gold"><%= humanized_money(@product.price) %> €</p>
+                        <% arr = [] %>
+                        <% Order.all.each do |order| %>
+                            <% order.order_products.each do |order_product| %>
+                                <% arr << order_product.product_id %>
+                            <% end %>
+                        <% end %>
+                        <% if arr.include?(@product.id) %>
+                            <p class="price-show gold">VENDU</p>
+                        <% else %>
+                            <p class="info-price">PRIX</p>
+                            <p class="price-show gold"><%= humanized_money(@product.price) %> €</p>
+                        <% end %>
                         <p class="livraison">Livraison & retour gratuits partout dans le monde</p>
-                        <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart' %>
+                        <% if arr.include?(@product.id) %>
+                            <button class="button-cart-vendu">Ajouter au panier</button>
+                        <% else %>
+                            <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart' %>
+                        <% end %>
                         <div class="d-flex justify-content-center mt-3">
                             <a href=""><i class="icone-info-price far fa-heart"></i></a>
                             <a href=""><i class="icone-info-price far fa-envelope"></i></a>
