@@ -28,19 +28,20 @@
                         </div>
 
                         <div class="d-flex justify-content-between">
-                            <div>
+                            <div class="height-cit">
                                 <div class="d-flex">
                                     <h4 class="gold mr-3"><i class="fas fa-quote-right"></i></h4>
                                     <h4 class="mb-3"><%= @product.user.name.capitalize %></h4>
                                 </div>
-                                <p class="citation">" Chacun de mes tableaux est un pas en avant vers une harmonie que je recherche continuellement. "</p>
+                                <% cit = ["Chacun de mes tableaux est un pas en avant vers une harmonie que je recherche continuellement.", "Le savant généralise, l'artiste individualise.", "Chaque grand artiste a sa vérité." ] %>
+                                <p class="citation">" <%=  cit.sample  %> "</p>
                                 <div class="d-flex justify-content-center mt-4">
-                                    <a href=""><i class="icone-info-artist fab fa-facebook"></i></a>
+                                    <%# <a href=""><i class="icone-info-artist fab fa-facebook"></i></a>
                                     <a href=""><i class="icone-info-artist fab fa-pinterest"></i></a>
-                                    <a href=""><i class="icone-info-artist fab fa-instagram"></i></a>
+                                    <a href=""><i class="icone-info-artist fab fa-instagram"></i></a> %>
                                 </div>
                             </div>
-                            <img src="https://img-4.linternaute.com/mGOFzl3YLSbU859r9cPd_Ai7o60=/1240x/smart/7a7db0744ead4b64a5254d35569ea458/ccmcms-linternaute/10984264.jpg" alt="" class="img-artist">    
+                            
                         </div>
                     </div>
                 </div>
