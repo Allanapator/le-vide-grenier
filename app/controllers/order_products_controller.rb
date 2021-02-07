@@ -8,8 +8,8 @@ class OrderProductsController < ApplicationController
   end
 
   def new
+    authorize @order_product
   end
-  authorize @order_product
 
   def create
     # array_id = []
