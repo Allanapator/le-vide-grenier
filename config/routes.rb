@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'pages#homePage'
+  get '/home' => 'pages#home'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   
   resources :carts
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   resources :order_products
 
   resources :products do 
-     resources :tags
+    resources :tags
   end
 
   resources :favorite_profils

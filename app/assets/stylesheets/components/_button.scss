@@ -120,6 +120,48 @@
   }
 }
 
+.button-cart-home {
+  margin: auto;
+  padding: 15px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #d5a870;
+  color: white;
+  border: 1px solid transparent;
+  transition: 0.5s background ease;
+
+  &:hover {
+    background: #d29961;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-cart-home-banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 180px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #d5a870;
+  color: white;
+  border: 1px solid transparent;
+  transition: 0.5s background ease;
+
+  &:hover {
+    text-decoration: none;
+    background: #d29961;
+    color: white;
+  }
+}
+
 .button-cart-vendu {
   width: 100%;
   padding: 15px 25px;

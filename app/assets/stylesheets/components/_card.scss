@@ -26,6 +26,36 @@
   }
 }
 
+.card-product-home {
+  background-color: #EFEFEF;
+  transform: scale(1);
+  margin-top: 50px;
+  min-width: 302px;
+  border: 1px solid transparent;
+  transition-property: transform;
+
+  img {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transform: scale(1);
+    max-width: 300px;
+    width: auto;
+    border-radius: 2px;
+    height: 400px;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+
+  &:hover img {
+    transition-duration: 0.5s;
+    transform: scale(0.95);
+  }
+
+  &:hover .btn-heart-index {
+    transition: 0.5s display ease;
+  }
+}
+
 .width-700 {
   width: 57vw;
 }
