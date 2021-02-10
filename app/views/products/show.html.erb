@@ -114,7 +114,7 @@
                         <% else %>
                             <%= link_to product_path(product), class:"border-none-product" do %>
                                 <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
-                                <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
+                                <p class="name-product-other pt-2"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
                             <% end %>
                         <% end %>
                         
