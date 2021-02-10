@@ -21,6 +21,23 @@
   }
 }
 
+.font24 {
+  text-decoration: none;
+  color: #D5A870;
+  font-size: 32px;
+
+  &:hover {
+    color: #D5A870;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: #D5A870;
+    outline: none;
+  }
+
+}
+
 .button-heart-cart {
   width: 36px;
   height: 36px;
@@ -117,6 +134,10 @@
   &:hover {
     background: #d29961;
     color: white;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

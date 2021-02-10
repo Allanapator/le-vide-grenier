@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#homePage'
   get '/home' => 'pages#home'
+  get '/who' => 'pages#who'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   
   resources :carts

@@ -7,11 +7,14 @@
   transition-property: transform;
 
   img {
+    padding: 5px;
+    border: 4px solid black;
+    border-radius: none;
+    background-color: white;
     transition-property: transform;
     transition-duration: 0.5s;
     transform: scale(1);
     width: 300px;
-    border-radius: 2px;
     height: auto;
     vertical-align: middle;
   }
@@ -35,15 +38,16 @@
   transition-property: transform;
 
   img {
+    background: white;
     transition-property: transform;
     transition-duration: 0.5s;
     transform: scale(1);
     max-width: 300px;
     width: auto;
-    border-radius: 2px;
     height: 400px;
     vertical-align: middle;
     object-fit: cover;
+
   }
 
   &:hover img {
@@ -54,6 +58,19 @@
   &:hover .btn-heart-index {
     transition: 0.5s display ease;
   }
+}
+
+.border-radius {
+  border-radius: 2px;
+}
+
+
+
+.product-image-home {
+  padding: 5px;
+  border: 4px solid black;
+  border-radius: none;
+  background-color: white;
 }
 
 .width-700 {
@@ -105,7 +122,8 @@
 }
 
 .other-product-div img {
-  border: 2px solid black;
+  border: 2px solid rgb(180, 166, 166);
+  padding: 3px;
   width: 250px;
   height: auto;
   transition: 0.3s transform ease;

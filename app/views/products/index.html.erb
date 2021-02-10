@@ -19,10 +19,10 @@
             <div class="col-sm-7 col-md-5 col-lg-4 d-flex justify-content-center">
                 <div class="card card-product" style="width: 18rem;" data-number='<%= count %>' >
                     <% if product.photo.attachment.nil? %>
-                        <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image" %>
+                        <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image border-radius" %>
                     <% else %>
                         <%= link_to product_path(product) do %>
-                            <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
+                            <%= cl_image_tag product.photo.key, class: "product-image border-radius", crop: :fill %>
                         <% end %>
                     <% end %>
                     <div class="card-body">
