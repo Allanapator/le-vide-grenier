@@ -8,7 +8,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :city, presence: true
   validates :sexe, presence: true
-  # enum sexe: { homme: 0, femme: 1}
   validates :name, presence: true
   validates :email, presence: true
   validates :address, presence: true
