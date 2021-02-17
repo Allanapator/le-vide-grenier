@@ -4,17 +4,16 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-end section">
                     <div class="ml-3 header-cart d-flex">
-                        <h2 class="">Panier</h2>
-                        <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @cart.cart_products.count %></h2>
+                        <h2 class="text-center">Procéder au paiement</h2>
                     </div>
-                    <%=link_to home_path, class:"button-return-shop" do %>
-                        <p class="mb-0 mr-3">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
+                    <%=link_to cart_path(@cart), class:"button-return-shop" do %>
+                        <p class="mb-0 mr-3">Retour au panier <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %>
                 </div>
             </div>
-
+            <h5 class="text-center recap mt-2">Récapitulatif de la commande</h5>
             <% unless @cart.cart_products.count == 0 %>
-                <div class="mt-5 flex-cart">
+                <div class="mt-3 flex-cart">
                     <div class="col-xl-9 col-lg-12 p-0">
                         <div class="mb-5 mr-2">
                             <% @cart.cart_products.each do |cart_product| %>
@@ -25,21 +24,16 @@
                                         <%= cl_image_tag cart_product.product.photo.key, class: "image-cart", crop: :fill %>
                                     <% end %>
                                     <div class="info-in-my-cart">
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-between">
                                             <div class="info-product-in-cart">
                                                 <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
                                                 <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
                                             </div>
-                                            <div class="ml-2 div-price-cart">
+                                            <div class="ml-2 div-price-pay">
                                                 <p class="font-12">PRIX</p>
                                                 <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
                                             </div>
-                                            <div>
-                                                <%= link_to cart_product_path(cart_product), method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
-                                                    <i class="gold icone-cart far fa-trash-alt d-flex justify-content-center mb-3"></i>
-                                                <% end %>
-                                                <button class="button-heart-cart d-flex justify-content-center"><i id="" class="far fa-heart button-like-cart gold "></i></button>
-                                            </div>
+                                            
                                         </div>
                                         <%# <div class="form-check checkbox check-pad">
                                             <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">

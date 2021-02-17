@@ -4,3 +4,11 @@
   right: 16px;
   z-index: 1000;
 }
+@media (max-width: 568px) {
+  .swal2-container {
+    width: 300px;
+  }
+  .swal2-title {
+    font-size: 1.4em !important;
+  }
+}

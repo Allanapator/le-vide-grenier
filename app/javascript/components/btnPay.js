@@ -1,16 +1,17 @@
 const btnPay = () => {
-    const btnOk = document.querySelector("#btn-pay");
-    const btnPayment = document.querySelector("#pay")
-
-    btnOk.addEventListener('click', (e) => {
-
-        if (btnPayment.className.includes("none")) {
-            btnPayment.classList.add("block")
-            block.classList.remove("none")
-        } else {
-            block.classList.remove("block")
-            block.classList.add("none")
-        }
-    })
-}
+  const recap = document.querySelector(".recap");
+  if (recap) {
+    window.addEventListener("load", (e) => {
+      e.preventDefault();
+      Swal.fire({
+        icon: "info",
+        title: "Procédure de paiement factice",
+        text:
+          "La méthode de paiement est en mode test pour éviter les réelles transactions. Remplissez les numéros de carte bleue par: '4242 4242 4242 4242' pour procéder à la transaction virtuelle.",
+        confirmButton: true,
+        closeOnConfirm: true,
+      });
+    });
+  }
+};
 export { btnPay };
