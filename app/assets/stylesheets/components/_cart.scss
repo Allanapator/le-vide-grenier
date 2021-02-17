@@ -1,147 +1,152 @@
 .background-cart {
-    min-height: calc(100vh - 120px);
-    background: #EFEFEF;
+  min-height: calc(100vh - 120px);
+  background: #efefef;
 }
 
 .header-cart {
-    margin-top: 50px;
-    font-size: 32px;
+  margin-top: 50px;
+  font-size: 32px;
 }
 
 .flex-cart {
-    display: flex;
-    justify-content: between;
+  display: flex;
+  justify-content: between;
 }
 
 .count-of-product {
-    margin-left: 25px;
-    font-size: 16px;
-    background: #CEA978;
-    color: white;
-    padding: 20px;
-    border-radius: 50%;
-    margin-bottom: 0;
-    width: 32px;
-    height: 32px;
+  margin-left: 25px;
+  font-size: 16px;
+  background: #cea978;
+  color: white;
+  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 0;
+  width: 32px;
+  height: 32px;
 }
 
 .font-24 {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .card-product-cart {
-    margin-top: 1px;
-    width: 800px;
-    background: #F8F8F8;
-    border-radius: 4px;
+  margin-top: 1px;
+  width: 800px;
+  background: #f8f8f8;
+  border-radius: 4px;
 }
 
 .info-product-in-cart {
-    padding-top: 20px;
-    min-width: 60%;
+  padding-top: 20px;
+  min-width: 60%;
 }
 
 .artist-name-cart {
-    font-size: 14px;
-    opacity: 0.5;
+  font-size: 14px;
+  opacity: 0.5;
 }
 
 .title-product-cart {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .checkbox {
-    opacity: 0.8;
-    margin-bottom: 0;
+  opacity: 0.8;
+  margin-bottom: 0;
 }
 
 [type="checkbox"] {
-    vertical-align: middle;
-    width: 20px;
-    height: 20px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
 
-    &:focus {
-        background: #D5A870;
-    }
+  &:focus {
+    background: #d5a870;
+  }
 }
 
 .input-check {
-    vertical-align: -3px;
-    position: relative;
+  vertical-align: -3px;
+  position: relative;
 }
 
 .font-12 {
-    font-size: 12px;
-    margin: 0;
+  font-size: 12px;
+  margin: 0;
 }
-
+.recap {
+  margin-left: 35px;
+}
 .cart-price-product {
-    font-size: 24px;
-    color: #D5A870;
+  font-size: 24px;
+  color: #d5a870;
 }
 
 .div-price-cart {
-    padding-top: 20px;
-    width: 40%;
+  padding-top: 20px;
+  width: 40%;
 }
 
+.div-price-pay {
+  padding-top: 20px;
+  width: 20%;
+}
 .icone-cart {
-    font-size: 22px;
-    padding-top: 20px;
+  font-size: 22px;
+  padding-top: 20px;
 }
 
 .button-like-cart {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .info-in-my-cart {
-    padding: 20px 20px 20px 20px;
-    width: 100%;
-    min-height: 150px;
+  padding: 20px 20px 20px 20px;
+  width: 100%;
+  min-height: 150px;
 }
 
 .check-pad {
-    position: relative;
-    bottom: -50px;
+  position: relative;
+  bottom: -50px;
 }
 
 .panier-total {
-    background: #393939;
-    width: 300px;
-    height: auto;
-    padding: 30px;
-    color: white;
-    border-radius: 4px;
-    // position: fixed;
-    // right: 165px;
+  background: #393939;
+  width: 300px;
+  height: auto;
+  padding: 30px;
+  color: white;
+  border-radius: 4px;
+  // position: fixed;
+  // right: 165px;
 }
 
 .price-total-cart {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .cart-livraison {
-    color: #9a9a9a;
+  color: #9a9a9a;
 }
 
 .lt-product {
-    text-decoration: none;
-    color: black;
-    transition: 0.2s color ease;
+  text-decoration: none;
+  color: black;
+  transition: 0.2s color ease;
 
-    &:hover {
-        color: #D5A870;
-        text-decoration: none;
-        ;
-    }
+  &:hover {
+    color: #d5a870;
+    text-decoration: none;
+  }
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .width-propos {
-    height: 173px;
+  height: 173px;
 }

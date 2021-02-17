@@ -22,12 +22,12 @@ require("channels");
 
 // External imports
 import "bootstrap";
-import { button } from '../components/buttonFavorite';
-import { buttonFavCart } from '../components/buttonFavCart';
-import { buttonSearch } from '../components/buttonSearch';
-import { btnPay } from '../components/btnPay';
-import { initSweetalert } from '../plugins/init_sweetalert';
-import { heart } from '../components/heartIndex';
+import { button } from "../components/buttonFavorite";
+import { buttonFavCart } from "../components/buttonFavCart";
+import { buttonSearch } from "../components/buttonSearch";
+import { btnPay } from "../components/btnPay";
+import { initSweetalert } from "../plugins/init_sweetalert";
+import { heart } from "../components/heartIndex";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,28 +35,28 @@ import { heart } from '../components/heartIndex';
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // btnPay();
+  btnPay();
   button();
   heart();
   buttonSearch();
   buttonFavCart();
-  initSweetalert('#del-button', {
-    title: "Êtes-vous sûre de vouloir supprimer ce panier ?",
-    text: "Une fois supprimé, vous ne pourrez plus récupérer ce panier!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-  }, (value) => {
-    if (value) {
-      const link = document.querySelector("#del-button-hid");
-      link.click();
+  initSweetalert(
+    "#del-button",
+    {
+      title: "Êtes-vous sûre de vouloir supprimer ce panier ?",
+      text: "Une fois supprimé, vous ne pourrez plus récupérer ce panier!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    },
+    (value) => {
+      if (value) {
+        const link = document.querySelector("#del-button-hid");
+        link.click();
+      }
     }
-  });
+  );
 });
-
-
-
-
 
 // initSweetalert('#btn-del', {
 //   title: "Êtes-vous sûre de vouloir supprimer ce produit ?",
