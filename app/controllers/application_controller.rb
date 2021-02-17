@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:sexe, :city, :age, :name, :description])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:sexe, :city, :name, :description, :address, :postal, :phone, :birthday])
   end
 
   private

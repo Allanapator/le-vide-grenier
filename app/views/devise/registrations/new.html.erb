@@ -33,7 +33,7 @@
                         required: true,
                         autofocus: true,
                         label: "Sexe",
-                        collection: User.sexes,
+                        collection: { homme: 0, femme: 1},
                         required: false %>
             <%= f.input :birthday,
                         as: :date,
