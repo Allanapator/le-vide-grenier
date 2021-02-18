@@ -40,22 +40,22 @@ document.addEventListener("turbolinks:load", () => {
   heart();
   buttonSearch();
   buttonFavCart();
-  initSweetalert(
-    "#del-button",
-    {
-      title: "Êtes-vous sûre de vouloir supprimer ce panier ?",
-      text: "Une fois supprimé, vous ne pourrez plus récupérer ce panier!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    },
-    (value) => {
-      if (value) {
-        const link = document.querySelector("#del-button-hid");
-        link.click();
-      }
-    }
-  );
+  // initSweetalert(
+  //   "#del-button",
+  //   {
+  //     title: "Êtes-vous sûre de vouloir supprimer ce panier ?",
+  //     text: "Une fois supprimé, vous ne pourrez plus récupérer ce panier!",
+  //     icon: "warning",
+  //     buttons: true,
+  //     dangerMode: true,
+  //   },
+  //   (value) => {
+  //     if (value) {
+  //       const link = document.querySelector("#del-button-hid");
+  //       link.click();
+  //     }
+  //   }
+  // );
 });
 
 // initSweetalert('#btn-del', {
