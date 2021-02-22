@@ -20,6 +20,11 @@
     border-radius: 4px;
 }
 
+.contain {
+    width: 100%;
+    padding: 0;
+}
+
 .image-cart {
     margin: 20px;
     max-width: 150px;
@@ -48,6 +53,7 @@
     background-position: center;
     height: 75vh;
     width: 100vw;
+    padding: 0;
     color: white;
 }
 
@@ -84,6 +90,14 @@ div-home-who-sec {
     width: 100vw;
     color: black;
     object-fit: cover;
+}
+
+.class-col {
+    padding: 0 !important;
+}
+
+.row {
+    overflow: hidden;
 }
 
 .img-sec {
