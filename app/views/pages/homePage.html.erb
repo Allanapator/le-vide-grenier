@@ -1,56 +1,65 @@
 <div class="row">
-    <div class="div-home-img d-flex justify-content-center align-items-center">
-        <div class="mx-auto col-md-8">
-            <div class="col-6 mx-auto">
-                <div class="cadre-dark">
-                    <h2 class="p-0  text-center m-0">Commencez votre collection dès maintenant</h2>
-                    <%=link_to home_path, class:"d-flex justify-content-center button-cart-home-banner mt-3" do %>
-                        <p class="mb-0">Découvrir <i class="fas fa-arrow-right ml-2"></i></p>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="col-12">
-            <h2 class="pt-5 pb-3 text-center font-422">Le vide grenier en ligne</h2>
-            <h4 class="pb-2 text-center">Une selection de nos oeuvres</h4>
-        </div>
-        <% Product.all.sample(3).each do |product| %>
-            <div class="col-sm-7 col-md-5 col-lg-4 d-flex justif-content-between align-items-end">
-                <div class="card card-product-home pb-5" style="width: 18rem;">
-                    <% if product.photo.attachment.nil? %>
-                        <%= image_tag "https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg", class:"product-image-home" %>
-                    <% else %>
-                        <%= cl_image_tag product.photo.key, class: "product-image-home", crop: :fill %>
-                    <% end %>
-                    <div class="card-body">
-                        <div>
-                            <div class="d-flex justify-content-between">
-                                <h5 class="card-title gold"><%= product.name.capitalize %></h5>
-                            </div>
-                            <div class="d-flex justify-content-between mt-1">
-                                <p class="card-text category"><%# product.category.capitalize %></p>
-                            </div>
-                            <h6 class="card-title mt-1"><%=  product.user.name.capitalize %></h6>
-                        </div>
-                        
+    <div class="col-12">
+        <div class="div-home-img d-flex justify-content-center align-items-center">
+            <div class="mx-auto col-md-8">
+                <div class="col-xl-6 col-lg-8 col-md-10 col-sm-8 mx-auto">
+                    <div class="cadre-dark">
+                        <h2 class="p-0  text-center m-0">Commencez votre collection dès maintenant</h2>
+                        <%=link_to home_path, class:"d-flex justify-content-center button-cart-home-banner mt-3" do %>
+                            <p class="mb-0">Découvrir <i class="fas fa-arrow-right ml-2"></i></p>
+                        <% end %>
                     </div>
                 </div>
             </div>
-        <% end %>
+        </div>
     </div>
 
-    <div class="div-home-img-sec mt-5">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="bloc-text-banner">
-                <h3 class=" font-24 text-center">Nous vous aidons à trouver votre prochain coup de coeur</h3>
-                <p class="text-center grey-color p-0 m-0">Vous avez des questions ?</p>
-                <p class="text-center grey-color p-0 m-0">Besoin de conseils pour une oeuvre?</p>
-                <button class="d-flex justify-content-center button-cart-home mt-3">Venez nous demander</button>
+    <div class="col-12">
+        <div class="container">
+            <div class="col-12">
+                <h2 class="pt-5 pb-3 text-center font-422">Le vide grenier en ligne</h2>
+                <h4 class="pb-2 text-center">Une selection de nos oeuvres</h4>
             </div>
-            <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/background_quizz_3.ce9ab797.jpg" alt="" class="img-sec">
+            <div class="row d-flex justify-content-around">
+                <% Product.all.sample(3).each do |product| %>
+                    <div class="col-sm-7 col-md-5 col-lg-4 d-flex justify-content-center align-items-center">
+                        <div class="card card-product-home pb-5" style="width: 18rem;">
+                            <% if product.photo.attachment.nil? %>
+                                <%= image_tag "https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg", class:"product-image-home" %>
+                            <% else %>
+                                <%= cl_image_tag product.photo.key, class: "product-image-home", crop: :fill %>
+                            <% end %>
+                            <div class="card-body">
+                                <div>
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title gold"><%= product.name.capitalize %></h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-1">
+                                        <p class="card-text category"><%# product.category.capitalize %></p>
+                                    </div>
+                                    <h6 class="card-title mt-1"><%=  product.user.name.capitalize %></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="div-home-img-sec mt-5">
+                <div class="box-card-dflex">
+                    <div class="bloc-text-banner">
+                        <h3 class=" font-24 text-center">Nous vous aidons à trouver votre prochain coup de coeur</h3>
+                        <p class="text-center grey-color p-0 m-0">Vous avez des questions ?</p>
+                        <p class="text-center grey-color p-0 m-0">Besoin de conseils pour une oeuvre?</p>
+                        <button class="d-flex justify-content-center button-cart-home mt-3">Venez nous demander</button>
+                    </div>
+                    <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/background_quizz_3.ce9ab797.jpg" alt="" class="img-sec">
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -51,14 +51,14 @@
                         </div>
                     </div>
 
-
                     <div class="col-xl-3 col-lg-12 p-0">
                         <div class="panier-total">
                             <div class="d-flex justify-content-between align-items-end pb-3">
                                 <h5 class="m-0 p-0">TOTAL</h5>
-                                <%= link_to "", cart_path(@cart), method: :delete, class:"hidden", id:"del-button-hid" %>
-                                <button id="del-button" class="button-hid"><i class="gold icone-cart far fa-trash-alt"></i></button>
-                                
+                                <%# <button id="del-button" class="button-hid"><i class="gold icone-cart far fa-trash-alt"></i></button> %>
+                                <%= link_to cart_path(@cart), method: :delete, class:"", id:"del-button-hid", data: { behavior: 'delete' } do %>
+                                    <i class="gold icone-cart far fa-trash-alt"></i>
+                                <% end %>
                             </div>
                             <p class="gold price-total-cart"><%= humanized_money(@cart.total_price) %> €</p>
                             <div class="cart-livraison d-flex">
