@@ -27,6 +27,25 @@ body {
         .width-700 {
             width: 45vw;
         }
+
+        .img-sec {
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+        }
+
+        .box-card-dflex {
+            display: block;
+        }
+
+        .bloc-text-banner {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
     }
 
     @media only screen and (max-width: 1199px) {
@@ -70,6 +89,8 @@ body {
             max-width: 50%;
         }
     }
+
+    @media only screen and (max-width: 1050px) {}
 
     @media only screen and (max-width: 991px) {
         .navbar-flex {
@@ -130,6 +151,10 @@ body {
 
         .flex-footer {
             display: block;
+        }
+
+        .cadre-dark {
+            padding: 10px;
         }
     }
 }
