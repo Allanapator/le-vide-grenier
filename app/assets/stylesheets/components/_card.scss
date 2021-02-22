@@ -29,6 +29,23 @@
   }
 }
 
+.margin-bottom-5 {
+  margin-bottom: 3rem;
+}
+
+.align-item-title {
+  display: flex;
+  align-items: center;
+  padding-top: 3rem;
+  margin-left: 1rem;
+}
+
+.title-flex-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .card-product-home {
   background-color: #EFEFEF;
   transform: scale(1);
@@ -36,6 +53,7 @@
   min-width: 302px;
   border: 1px solid transparent;
   transition-property: transform;
+  padding-bottom: 2rem;
 
   img {
     background: white;
@@ -105,6 +123,7 @@
 .test {
   padding: 30px;
   min-height: 200px;
+  height: auto;
   background: #2F2F2F;
   width: 100%;
 }
@@ -127,6 +146,12 @@
   color: white;
   font-size: 26px;
   margin-left: 150px;
+}
+
+.other-product-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .other-product-div img {
@@ -211,12 +236,11 @@
 }
 
 .info-product {
-
+  padding-top: 1.5rem;
   right: -10;
   max-width: 645px;
   width: 60%;
   min-width: 500px;
-
   padding: 20px;
   padding-right: 100px;
 }
@@ -235,11 +259,25 @@
   background: #F8F8F8;
 }
 
+.flex-columnn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+}
+
 .gold {
   color: #d5a870;
 }
 
 .section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.section-none {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
   padding-bottom: 20px;
