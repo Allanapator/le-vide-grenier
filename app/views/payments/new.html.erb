@@ -2,8 +2,8 @@
     <div class="container ">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex justify-content-between align-items-end section">
-                    <div class="ml-3 header-cart d-flex">
+                <div class="flex-section section">
+                    <div class="header-cart d-flex">
                         <h2 class="text-center">Procéder au paiement</h2>
                     </div>
                     <%=link_to cart_path(@cart), class:"button-return-shop" do %>
@@ -30,7 +30,7 @@
                                                 <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
                                             </div>
                                             <div class="ml-2 div-price-pay">
-                                                <p class="font-12">PRIX</p>
+                                                <p class="font-12 prix-titre">PRIX</p>
                                                 <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
                                             </div>
                                             
@@ -47,7 +47,7 @@
 
 
                     <div class="col-xl-3 col-lg-12 p-0">
-                        <div class="panier-total">
+                        <div class="panier-total mb-1">
                             <div class="d-flex justify-content-between align-items-end pb-3">
                                 <h5 class="m-0 p-0">TOTAL</h5>
                                 

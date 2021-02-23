@@ -2,12 +2,12 @@
     <div class="container ">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex justify-content-between align-items-end section">
-                    <div class="ml-3 header-cart d-flex">
+                <div class="flex-section section">
+                    <div class="header-cart d-flex">
                         <h2 class="">Panier</h2>
                         <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @cart.cart_products.count %></h2>
                     </div>
-                    <%=link_to home_path, class:"button-return-shop" do %>
+                    <%=link_to home_path, class:"button-return-shop button-return-shopp" do %>
                         <p class="mb-0 mr-3">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %>
                 </div>
@@ -15,9 +15,9 @@
         </div>
 
         <% unless @cart.cart_products.count == 0 %>
-            <div class="mt-5 flex-cart">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-12 p-0">
+            <div class="row flex-cart mt-5">
+                <%# <div class="mt-5 "> %>
+                    <div class="col-xl-8 col-lg-12 p-0">
                         <div class="mb-5 mr-2">
                             <% @cart.cart_products.each do |cart_product| %>
                                 <div class="card-product-cart d-flex">
@@ -27,32 +27,32 @@
                                         <%= cl_image_tag cart_product.product.photo.key, class: "image-cart", crop: :fill %>
                                     <% end %>
                                     <div class="info-in-my-cart">
-                                        <div class="d-flex">
+                                        
                                             <div class="info-product-in-cart">
                                                 <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
                                                 <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
                                             </div>
                                             <div class="ml-2 div-price-cart">
-                                                <p class="font-12">PRIX</p>
+                                                <p class="font-12 prix-titre">PRIX</p>
                                                 <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
                                             </div>
                                             <div>
                                                 <%= link_to cart_product_path(cart_product), method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
-                                                    <i class="gold icone-cart far fa-trash-alt d-flex justify-content-center mb-3"></i>
+                                                    <i class="gold icone-cart far fa-trash-alt d-flex justify-content-center mb-3 poubelle"></i>
                                                 <% end %>
-                                                <button class="button-heart-cart d-flex justify-content-center"><i id="" class="far fa-heart button-like-cart gold "></i></button>
+                                                <button class="button-heart-cart d-flex justify-content-center coeur"><i id="" class="far fa-heart button-like-cart gold "></i></button>
                                             </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             <% end %>
                         </div>
                     </div>
-                </div>
+                <%# </div>
 
-                <div class="row">
-                    <div class="col-xl-3 col-lg-12 p-0">
-                        <div class="panier-total">
+                <div class="row"> %>
+                    <div class="col-xl-4 col-lg-12  col-xs-12 p-0">
+                        <div class="panier-total mb-1">
                             <div class="d-flex justify-content-between align-items-end pb-3">
                                 <h5 class="m-0 p-0">TOTAL</h5>
                                 <%= link_to cart_path(@cart), method: :delete, class:"", id:"del-button-hid", data: { behavior: 'delete' } do %>
@@ -82,7 +82,7 @@
                             <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                         </div>
                     </div>
-                </div>
+                <%# </div> %>
             </div>
         <% end %>
     </div>

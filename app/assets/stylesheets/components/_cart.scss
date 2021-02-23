@@ -6,11 +6,20 @@
 .header-cart {
   margin-top: 50px;
   font-size: 32px;
+  margin-left: 16px;
 }
 
 .flex-cart {
   display: flex;
-  justify-content: between;
+  justify-content: space-around;
+  margin-top: 48px;
+  padding: 0 15px;
+}
+
+.flex-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .count-of-product {
@@ -31,7 +40,7 @@
 
 .card-product-cart {
   margin-top: 1px;
-  width: 800px;
+  width: 700px;
   background: #f8f8f8;
   border-radius: 4px;
 }
@@ -110,6 +119,7 @@
 }
 
 .info-in-my-cart {
+  display: flex;
   padding: 20px 20px 20px 20px;
   width: 100%;
   min-height: 150px;
