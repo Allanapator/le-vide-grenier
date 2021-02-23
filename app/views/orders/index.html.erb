@@ -1,8 +1,8 @@
 <div class="background-cart">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-end section">
-            <h2 class="ml-3 mb-0 d-flex align-items-center pt-5"> Mes commandes</h2>
-            <%=link_to home_path, class:"button-return-shop mr-3" do %>
+        <div class="container-button-shopping section">
+            <h2 class=" mb-0 d-flex align-items-center pt-5"> Mes commandes</h2>
+            <%=link_to home_path, class:"button-return-shop mt-3" do %>
                 <p class=" mb-0">Retour au shopping <i class="fas fa-arrow-right ml-2"></i></p>
             <% end %> 
         </div>
@@ -44,10 +44,7 @@
                                             <% end %>
                                         </ul>
                                         <div class="list-of-btn mt-3">
-                                            <p class="mb-2"><button class="button-order">Suivre votre colis</button></p>
-                                            <p class="mb-2"><button class="button-order">Retourner un article</button></p>
-                                            <p class="mb-2"><button class="button-order">Évaluer un vendeur</button></p>
-                                            <p class="mb-2"><button class="button-order">Évaluer une oeuvre</button></p>
+
                                             <p class ="mb-2 mt-3"><%= link_to 'Détails de la commande', order_path(order) , class:"button-order-suivis"%></p>
                                             
                                         </div>
