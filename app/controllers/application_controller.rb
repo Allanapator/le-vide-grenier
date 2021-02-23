@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+
+  def default_url_options
+    { host: ENV["https://le-vide-grenier.herokuapp.com/"] || "localhost:3000" }
+  end
   include Pundit
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
