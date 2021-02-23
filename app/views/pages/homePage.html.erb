@@ -1,29 +1,33 @@
-<div class="row">
-    <div class="col-12">
-        <div class="div-home-img d-flex justify-content-center align-items-center">
-            <div class="mx-auto col-md-8">
-                <div class="col-xl-6 col-lg-8 col-md-10 col-sm-8 mx-auto">
-                    <div class="cadre-dark">
-                        <h2 class="p-0  text-center m-0">Commencez votre collection dès maintenant</h2>
-                        <%=link_to home_path, class:"d-flex justify-content-center button-cart-home-banner mt-3" do %>
-                            <p class="mb-0">Découvrir <i class="fas fa-arrow-right ml-2"></i></p>
-                        <% end %>
+<div class="contain">
+    <div class="row no-gutters">
+        <div class="col-12 no-gutters">
+            <div class="div-home-img d-flex justify-content-center align-items-center">
+                <div class="mx-auto col-md-8">
+                    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-8 mx-auto">
+                        <div class="cadre-dark">
+                            <h2 class="p-0  text-center m-0">Commencez votre collection dès maintenant</h2>
+                            <%=link_to home_path, class:"d-flex justify-content-center button-cart-home-banner mt-3" do %>
+                                <p class="mb-0">Découvrir <i class="fas fa-arrow-right ml-2"></i></p>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="col-12">
+<div class="contain">
+    <div class="col-12 no-gutters">
         <div class="container">
-            <div class="col-12">
+            <div class="col-12 no-gutters">
                 <h2 class="pt-5 pb-3 text-center font-422">Le vide grenier en ligne</h2>
-                <h4 class="pb-2 text-center">Une selection de nos oeuvres</h4>
+                <h4 class="pb-2 text-center text-h4">Une selection de nos oeuvres</h4>
             </div>
             <div class="row d-flex justify-content-around">
                 <% Product.all.sample(3).each do |product| %>
                     <div class="col-sm-7 col-md-5 col-lg-4 d-flex justify-content-center align-items-center">
-                        <div class="card card-product-home pb-5" style="width: 18rem;">
+                        <div class="card card-product-home" style="width: 18rem;">
                             <% if product.photo.attachment.nil? %>
                                 <%= image_tag "https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg", class:"product-image-home" %>
                             <% else %>
@@ -46,9 +50,11 @@
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row">
-        <div class="col-12">
+<div class="contain">
+    <div class="row no-gutters">
+        <div class="col-12 no-gutters">
             <div class="div-home-img-sec mt-5">
                 <div class="box-card-dflex">
                     <div class="bloc-text-banner">
@@ -63,3 +69,4 @@
         </div>
     </div>
 </div>
+

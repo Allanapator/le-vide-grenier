@@ -9,12 +9,14 @@
   background: #232323;
   color: white;
   max-width: 100%;
-  min-height: 200px;
+  height: auto;
   height: auto;
 }
+
 .footer-services {
   width: auto;
 }
+
 .font-42 {
   font-size: 72px;
 }
@@ -24,7 +26,12 @@
 }
 
 .grey-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: auto;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .box-pay {
@@ -40,10 +47,12 @@
   padding-bottom: 20px;
   padding-top: 20px;
 }
+
 .rubrique {
   display: flex;
   justify-content: space-between;
 }
+
 .link-footer {
   text-decoration: none;
   font-size: 20px;
@@ -77,47 +86,61 @@
     color: white;
   }
 }
+
 .follow {
   display: flex;
   align-items: center;
 }
+
 .flex-footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-@media (max-width: 568px) {
+@media (max-width: 775px) {
+  .grey-box {
+    padding-top: 1rem;
+  }
+
   .rubrique {
     display: flex;
-    flex-direction: column;
     justify-content: center;
   }
+
+  .cb {
+    text-align: center;
+  }
+
+  .font-42 {
+    font-size: 30px;
+  }
+
+  .font-80 {
+    font-size: 40px;
+  }
+
+  .box-pay h5 {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
   .rubrique h4 {
     font-size: 20px;
   }
+
+  .rubrique {
+    flex-direction: column;
+  }
+
   .box-pay {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .box-pay .fa-palette {
-    font-size: 40px;
-  }
-  .box-pay .fa-truck {
-    font-size: 40px;
-  }
-  .box-pay .fa-box {
-    font-size: 40px;
-  }
-  .box-pay .fa-lock {
-    font-size: 40px;
-  }
 
-  .box-pay h5 {
-    font-size: 10px;
-    text-align: center;
-  }
   .cb {
     display: flex;
     justify-content: space-between;

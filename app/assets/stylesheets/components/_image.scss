@@ -20,6 +20,11 @@
   border-radius: 4px;
 }
 
+.contain {
+    width: 100%;
+    padding: 0;
+}
+
 .image-cart {
   margin: 20px;
   max-width: 150px;
@@ -43,13 +48,13 @@
 }
 
 .div-home-img {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("http://www.fondation-vincentvangogh-arles.org/wp-content/uploads/2017/02/Van_Gogh_30193.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 75vh;
-  width: 100vw;
-  color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://www.fondation-vincentvangogh-arles.org/wp-content/uploads/2017/02/Van_Gogh_30193.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    width: 100vw;
+    padding: 0;
+    color: white;
 }
 
 .div-who-img {
@@ -89,6 +94,14 @@
   width: 100vw;
   color: black;
   object-fit: cover;
+}
+
+.class-col {
+    padding: 0 !important;
+}
+
+.row {
+    overflow: hidden;
 }
 
 .img-sec {

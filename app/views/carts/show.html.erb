@@ -12,9 +12,11 @@
                     <% end %>
                 </div>
             </div>
+        </div>
 
-            <% unless @cart.cart_products.count == 0 %>
-                <div class="mt-5 flex-cart">
+        <% unless @cart.cart_products.count == 0 %>
+            <div class="mt-5 flex-cart">
+                <div class="row">
                     <div class="col-xl-9 col-lg-12 p-0">
                         <div class="mb-5 mr-2">
                             <% @cart.cart_products.each do |cart_product| %>
@@ -41,21 +43,18 @@
                                                 <button class="button-heart-cart d-flex justify-content-center"><i id="" class="far fa-heart button-like-cart gold "></i></button>
                                             </div>
                                         </div>
-                                        <%# <div class="form-check checkbox check-pad">
-                                            <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
-                                            <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
-                                        </div> %>
                                     </div>
                                 </div>
                             <% end %>
                         </div>
                     </div>
+                </div>
 
+                <div class="row">
                     <div class="col-xl-3 col-lg-12 p-0">
                         <div class="panier-total">
                             <div class="d-flex justify-content-between align-items-end pb-3">
                                 <h5 class="m-0 p-0">TOTAL</h5>
-                                <%# <button id="del-button" class="button-hid"><i class="gold icone-cart far fa-trash-alt"></i></button> %>
                                 <%= link_to cart_path(@cart), method: :delete, class:"", id:"del-button-hid", data: { behavior: 'delete' } do %>
                                     <i class="gold icone-cart far fa-trash-alt"></i>
                                 <% end %>
@@ -65,30 +64,27 @@
                                 <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
                                 <p class="">Livraison sous 7 jours en moyenne</p>
                             </div>
-                            <%# link_to orders_path do %>
                             <%= simple_form_for @order do |f| %>
                                 <%= f.button :submit, "Valider mon panier", class:"button-cart mb-3", id:"btn-pay" %>
                             <% end %>
                             <button id="pay" class="none button-cart">Payer</button>
                             <script src="https://js.stripe.com/v3/"></script>
                             <script>
-                            const paymentButton = document.getElementById('pay');
-                            paymentButton.addEventListener('click', () => {
-                                const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-                                stripe.redirectToCheckout({
-                                sessionId: '<%= @order.checkout_session_id %>'
+                                const paymentButton = document.getElementById('pay');
+                                paymentButton.addEventListener('click', () => {
+                                    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                                    stripe.redirectToCheckout({
+                                    sessionId: '<%= @order.checkout_session_id %>'
+                                    });
                                 });
-                            });
                             </script>
-                            
-                            <%# end %>
                             <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
                             <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                         </div>
                     </div>
                 </div>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </div>
 </div>
 
