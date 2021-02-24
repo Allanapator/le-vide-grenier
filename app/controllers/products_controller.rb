@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only:[:search]
   skip_before_action :authenticate_user!
 
   def index
@@ -7,8 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%")
-    authorize @product
+    @products = policy_scope(Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%"))
   end
 
   def show
