@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%")
-    authorize @product
+    authorize @products
   end
 
   def show
