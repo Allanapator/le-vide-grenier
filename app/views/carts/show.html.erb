@@ -51,11 +51,11 @@
                 <%# </div>
 
                 <div class="row"> %>
-                    <div class="col-xl-4 col-lg-12  col-xs-12 p-0">
+                    <div class="col-xl-4 col-lg-12  col-xs-12 test-00 p-0">
                         <div class="panier-total mb-1">
                             <div class="d-flex justify-content-between align-items-end pb-3">
                                 <h5 class="m-0 p-0">TOTAL</h5>
-                                <%= link_to cart_path(@cart), method: :delete, class:"", id:"del-button-hid", data: { behavior: 'delete' } do %>
+                                <%= link_to cart_path(@cart), method: :delete, class:"", id:"del-button-hid", data: {confirm: "Êtes-vous sûre de vouloir supprimer ce panier ?"} do %>
                                     <i class="gold icone-cart far fa-trash-alt"></i>
                                 <% end %>
                             </div>

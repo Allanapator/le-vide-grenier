@@ -264,6 +264,23 @@ body {
     }
 
     @media only screen and (max-width: 535px) {
+        .d-flex-info-banner-order {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .d-flex-columnn {
+            flex-direction: row;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .header-cart {
+            text-align: center;
+        }
+
         .button-add {
             top: 0;
             left: 0;
