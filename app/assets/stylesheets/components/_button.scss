@@ -23,19 +23,18 @@
 
 .font24 {
   text-decoration: none;
-  color: #D5A870;
+  color: #d5a870;
   font-size: 32px;
 
   &:hover {
-    color: #D5A870;
+    color: #d5a870;
     text-decoration: none;
   }
 
   &:focus {
-    color: #D5A870;
+    color: #d5a870;
     outline: none;
   }
-
 }
 
 .button-heart-cart {
@@ -50,7 +49,6 @@
   &:focus {
     outline: none;
     color: #d5a870;
-    ;
   }
 }
 
@@ -199,11 +197,14 @@
   }
 }
 
-
 .button-pay {
   width: 200px;
 }
-
+.container-button-shopping {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .button-search {
   padding: 15px 25px;
   border-radius: 3px;
@@ -253,17 +254,17 @@
 .button-order {
   text-decoration: none;
   min-width: 200px;
-  background: #D6AB75;
+  background: #d6ab75;
   color: white;
-  border: 1px solid #D6AB75;
+  border: 1px solid #d6ab75;
   border-radius: 2px;
   transition: 0.5s color ease;
   transition: 0.5s background ease;
 
   &:hover {
     background: white;
-    color: #D6AB75;
-    border: 1px solid #D6AB75;
+    color: #d6ab75;
+    border: 1px solid #d6ab75;
   }
 
   &:focus {
@@ -308,5 +309,21 @@
 .far .fa-user {
   :before {
     color: white;
+  }
+}
+
+@media (max-width: 568px) {
+  .background-card .button-return-shop {
+    border-radius: 50%;
+    width: auto;
+  }
+  .container-button-shopping h2 {
+    font-size: 20px;
+  }
+  .container-button-shopping {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

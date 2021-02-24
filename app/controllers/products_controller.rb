@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = policy_scope(Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%"))
+    @products = Product.where("lower(name) LIKE ?", "%" + "#{params[:q].downcase}" + "%")
+    authorize @products
   end
 
   def show

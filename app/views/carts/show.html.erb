@@ -67,18 +67,6 @@
                             <%= simple_form_for @order do |f| %>
                                 <%= f.button :submit, "Valider mon panier", class:"button-cart mb-3", id:"btn-pay" %>
                             <% end %>
-                            <button id="pay" class="none button-cart">Payer</button>
-                            <script src="https://js.stripe.com/v3/"></script>
-                            <script>
-                                const paymentButton = document.getElementById('pay');
-                                paymentButton.addEventListener('click', () => {
-                                    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-                                    stripe.redirectToCheckout({
-                                    sessionId: '<%= @order.checkout_session_id %>'
-                                    });
-                                });
-                            </script>
-                            <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
                             <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                         </div>
                     </div>

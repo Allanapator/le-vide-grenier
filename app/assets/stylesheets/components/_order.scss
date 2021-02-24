@@ -1,12 +1,23 @@
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 .order-product-title {
-    min-width: 300px;
+  min-width: 300px;
 }
 
 .info-in-my-order {
-    padding: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+@media (max-width: 568px) {
+  .card-product-cart {
     width: 100%;
+  }
+  .info-in-my-order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
