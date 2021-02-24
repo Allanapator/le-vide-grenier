@@ -130,6 +130,23 @@
   padding-top: 20px;
 }
 
+.link-who {
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.5s ease opacity;
+  color: #D5A870;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+    color: #D5A870;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
+
 .button-like-cart {
   font-size: 22px;
 }

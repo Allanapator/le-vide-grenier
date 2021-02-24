@@ -269,6 +269,13 @@ body {
             align-items: flex-start;
         }
 
+        .flex-order {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center
+        }
+
         .d-flex-columnn {
             flex-direction: row;
         }
