@@ -1,6 +1,6 @@
 <div class="container back-height mb-4 mt-4">
     <%= link_to "Ajouter", new_product_path(@product), class:"button-add"%>
-    <div class="d-flex justify-content-between align-items-end section">
+    <div class="flex-section section">
         <h2 class="ml-3 d-flex align-items-center mb-0">Vos oeuvres</h2>
         <% if @products.count > 0 %>
             <h4 class="mr-3 mb-0">Vous avez <span class="gold"><%= @products.count %></span> oeuvres en vente</h4>
@@ -16,7 +16,7 @@
         <% count = 0 %>
         <% @products.each do |product|%>
             <% count += 1 %>
-            <div class="col-sm-7 col-md-5 col-lg-4 d-flex justify-content-center">
+            <div class="col-sm-12 col-md-5 col-lg-4 d-flex justify-content-center">
                 <div class="card card-product" style="width: 18rem;" data-number='<%= count %>' >
                     <% if product.photo.attachment.nil? %>
                         <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image border-radius" %>

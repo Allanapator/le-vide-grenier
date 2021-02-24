@@ -6,11 +6,20 @@
 .header-cart {
   margin-top: 50px;
   font-size: 32px;
+  margin-left: 16px;
 }
 
 .flex-cart {
   display: flex;
-  justify-content: between;
+  justify-content: space-around;
+  margin-top: 48px;
+  padding: 0 15px;
+}
+
+.flex-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .count-of-product {
@@ -31,7 +40,7 @@
 
 .card-product-cart {
   margin-top: 1px;
-  width: 800px;
+  width: auto;
   background: #f8f8f8;
   border-radius: 4px;
 }
@@ -82,10 +91,26 @@
 }
 
 .recap {
-  margin-left: 35px;
+  margin: auto;
 }
 
 .cart-price-product {
+  font-size: 24px;
+  color: #d5a870;
+}
+
+.d-flex-info-banner-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.d-flex-columnn {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-price-product-order {
   font-size: 24px;
   color: #d5a870;
 }
@@ -110,6 +135,8 @@
 }
 
 .info-in-my-cart {
+  display: flex;
+  justify-content: space-between;
   padding: 20px 20px 20px 20px;
   width: 100%;
   min-height: 150px;
@@ -118,6 +145,12 @@
 .check-pad {
   position: relative;
   bottom: -50px;
+}
+
+.test-00 {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .panier-total {

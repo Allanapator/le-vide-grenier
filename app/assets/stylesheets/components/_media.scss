@@ -30,7 +30,14 @@ body {
     }
 
     @media only screen and (max-width: 1199px) {
+        .panier-total {
+            margin: auto;
+            width: 60%;
+        }
 
+        .card-product-cart {
+            width: auto;
+        }
 
         .icone-none {
             display: none;
@@ -110,7 +117,7 @@ body {
         }
 
         .flex-cart {
-            display: block;
+            flex-direction: column;
         }
 
         .info-product-in-cart {
@@ -227,9 +234,84 @@ body {
             height: 300px;
         }
 
+        .card-product-cart {
+            width: auto;
+            height: auto;
+        }
+
+        .card-product-cart img {
+            max-width: 60px;
+            max-height: 60px;
+            object-fit: cover;
+            margin-right: 0;
+        }
+
+        .info-product-in-cart {
+            padding-top: 0;
+            min-width: auto;
+        }
+
+        .div-price-cart {
+            padding-top: 0;
+            padding-left: 25px;
+        }
+
+        .info-in-my-cart {
+            width: 100%;
+            justify-content: space-between;
+        }
+
     }
 
     @media only screen and (max-width: 535px) {
+        .d-flex-info-banner-order {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .d-flex-columnn {
+            flex-direction: row;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .header-cart {
+            text-align: center;
+        }
+
+        .button-add {
+            top: 0;
+            left: 0;
+        }
+
+        .info-in-my-cart {
+            position: relative;
+        }
+
+        .cart-price-product {
+            position: absolute;
+            bottom: 3px;
+            left: 25px;
+        }
+
+        .prix-titre {
+            display: none;
+        }
+
+        // .poubelle {
+        //     position: absolute;
+        //     bottom: 16px;
+        //     right: 20px;
+        // }
+
+        // .coeur {
+        //     position: absolute;
+        //     bottom: 16px;
+        //     right: 60px;
+        // }
+
         .image-show-product {
             width: 300px;
             height: 200px;
@@ -259,6 +341,26 @@ body {
 
         .text-h4 {
             font-size: 16px;
+        }
+
+        .flex-section {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex-section .button-return-shopp {
+            display: none;
+        }
+
+        .header-cart {
+            margin-left: 0;
+        }
+    }
+
+    @media only screen and (max-width: 420px) {
+        .panier-total {
+            width: 100%;
         }
     }
 }

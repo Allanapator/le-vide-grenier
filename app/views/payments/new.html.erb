@@ -2,19 +2,22 @@
     <div class="container ">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex justify-content-between align-items-end section">
-                    <div class="ml-3 header-cart d-flex">
-                        <h2 class="text-center">Procéder au paiement</h2>
+                <div class="flex-section section">
+                    <div class="header-cart d-flex">
+                        <h2 class="">Procéder au paiement</h2>
                     </div>
                     <%=link_to cart_path(@cart), class:"button-return-shop" do %>
                         <p class="mb-0 mr-3">Retour au panier <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %>
                 </div>
             </div>
-            <h5 class="text-center recap mt-2">Récapitulatif de la commande</h5>
-            <% unless @cart.cart_products.count == 0 %>
-                <div class="mt-3 flex-cart">
-                    <div class="col-xl-9 col-lg-12 p-0">
+        </div>
+
+        <% unless @cart.cart_products.count == 0 %>
+                <h5 class="text-center recap mt-2">Récapitulatif de la commande</h5>
+            <div class="row flex-cart mt-5">
+                <%# <div class="mt-5 "> %>
+                    <div class="col-xl-8 col-lg-12 p-0">
                         <div class="mb-5 mr-2">
                             <% @cart.cart_products.each do |cart_product| %>
                                 <div class="card-product-cart d-flex">
@@ -24,40 +27,32 @@
                                         <%= cl_image_tag cart_product.product.photo.key, class: "image-cart", crop: :fill %>
                                     <% end %>
                                     <div class="info-in-my-cart">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="info-product-in-cart">
-                                                <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
-                                                <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
-                                            </div>
-                                            <div class="ml-2 div-price-pay">
-                                                <p class="font-12">PRIX</p>
-                                                <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
-                                            </div>
-                                            
+                                        <div class="info-product-in-cart">
+                                            <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
+                                            <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
                                         </div>
-                                        <%# <div class="form-check checkbox check-pad">
-                                            <input type="checkbox" class="form-check-input input-check" id="exampleCheck1">
-                                            <label class="form-check-label ml-2 checkbox font-12" for="exampleCheck1">Cette œuvre est un cadeau. Elle sera livrée avec un message personnalisé.</label>
-                                        </div> %>
+                                        <div class="ml-2 div-price-cart">
+                                            <p class="font-12 prix-titre">PRIX</p>
+                                            <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
+                                        </div>
                                     </div>
                                 </div>
                             <% end %>
                         </div>
                     </div>
+                <%# </div>
 
-
-                    <div class="col-xl-3 col-lg-12 p-0">
-                        <div class="panier-total">
+                <div class="row"> %>
+                    <div class="col-xl-4 col-lg-12  col-xs-12 test-00 p-0">
+                        <div class="panier-total mb-1">
                             <div class="d-flex justify-content-between align-items-end pb-3">
                                 <h5 class="m-0 p-0">TOTAL</h5>
-                                
                             </div>
                             <p class="gold price-total-cart"><%= @order.amount %> €</p>
                             <div class="cart-livraison d-flex">
                                 <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
                                 <p class="">Livraison sous 7 jours en moyenne</p>
                             </div>
-                            <%# link_to orders_path do %>
                             <button id="pay" class="button-cart">Payer</button>
                             <script src="https://js.stripe.com/v3/"></script>
                             <script>
@@ -69,16 +64,13 @@
                                     });
                                 });
                             </script>
-                            <%# end %>
                             <p class="font-12 mt-3">PAIEMENT SÉCURISÉ</p>
                             <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                         </div>
                     </div>
-                </div>
-            <% end %>
-        </div>
+                <%# </div> %>
+            </div>
+        <% end %>
     </div>
 </div>
-
-
 
