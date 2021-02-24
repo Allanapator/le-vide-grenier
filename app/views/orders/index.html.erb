@@ -1,61 +1,61 @@
 <div class="background-cart">
     <div class="container">
-        <div class="container-button-shopping section">
-            <h2 class=" mb-0 d-flex align-items-center pt-5"> Mes commandes</h2>
-            <%=link_to home_path, class:"button-return-shop mt-3" do %>
-                <p class=" mb-0">Retour au shopping <i class="fas fa-arrow-right ml-2"></i></p>
-            <% end %> 
-        </div>
-        <div class="block-order mt-5 d-flex justify-content-center">
-            <div class="row">
-                <div class="mb-5">
-                    <% count = 0 %>
-                    <% current_user.orders.each do |order| %>
-                        <div class=" d-flex justify-content-center">
-                            <div class="card-product-cart d-flex mb-3">
-                                <div class="info-in-my-order">
-
-                                    <div class=" d-flex section justify-content-between align-items-end p-0">
-                                        <p class="">Commande effectué le <%= order.created_at.strftime("%d %B %Y")%><span class="badge badge-primary ml-3"><%= order.state %></span></p>
-                                        <div class="">
-                                            <p class="mb-1">Total</p>
-                                            <p class="gold mb-1"><%= order.amount %> €</p>
-                                        </div>
-                                        <p><%= count += 1 %>/<%= current_user.orders.count %></p>
-                                        <%= link_to order_path(order), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cette commande ?"}  do %>
-                                            <p><i class="gold icone-cart far fa-trash-alt"></i></p>
-                                        <% end %>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between ">
-                                        <ul class="list pl-0">
-                                            <% order.order_products.each do |order_product| %>
-                                                <li>
-                                                    <div class="d-flex align-items-center justify-content-between">
-                                                        <% if order_product.product.photo.attachment.nil? %>
-                                                            <img class="image-order" src="https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg" alt="">
-                                                        <% else %>
-                                                            <%= cl_image_tag order_product.product.photo.key, class: "image-order", crop: :fill %>
-                                                        <% end %>
-                                                        <h5 class="title-product-cart order-product-title mb-0"><%= order_product.product.name %></h5>
-                                                        <p class="cart-price-product mb-0"><%= humanized_money(order_product.product.price) %>€</p>
-                                                    </div>
-                                                </li>
-                                            <% end %>
-                                        </ul>
-                                        <div class="list-of-btn mt-3">
-
-                                            <p class ="mb-2 mt-3"><%= link_to 'Détails de la commande', order_path(order) , class:"button-order-suivis"%></p>
-                                            
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    <% end %>
+        <div class="row">
+            <div class="col-12">
+                <div class="flex-section section">
+                    <h2 class="header-cart"> Mes commandes</h2>
+                    <%=link_to home_path, class:"button-return-shop" do %>
+                        <p class="mb-0">Retour au shopping <i class="fas fa-arrow-right ml-2"></i></p>
+                    <% end %> 
                 </div>
             </div>
         </div>
+
+        
+
+
+        <div class="row">
+            <div class="col-lg-12 col-12 mx-auto">
+                <% current_user.orders.each do |order| %>
+                    <div class="card-product-cart d-flex mb-5 mt-5 mx-auto">
+                        <div class="info-in-my-order">
+                            <div class="d-flex-info-banner-order section p-0">
+                                <p class="">Commande effectué le <%= order.created_at.strftime("%d %B %Y")%> <span class="badge badge-primary ml-3"><%= order.state %></span></p>
+                                <div class="d-flex-columnn">
+                                    <p class="mb-1 hide">Total</p>
+                                    <p class="gold mb-1"><%= order.amount %> €</p>
+                                </div>
+                                <div class="flex-order">
+                                    <%= link_to 'Détails', order_path(order) , class:"button-order-suivis mb-3"%>
+                                    <%= link_to order_path(order), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cette commande ?"}  do %>
+                                        <p><i class="gold icone-cart far fa-trash-alt"></i></p>
+                                    <% end %>
+                                </div>
+                            </div>
+
+                            <% order.order_products.each do |order_product| %>
+                                <div class="card-product-cart d-flex">
+                                    <% if order_product.product.photo.attachment.nil? %>
+                                        <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-cart">
+                                    <% else%>
+                                        <%= cl_image_tag order_product.product.photo.key, class: "image-order", crop: :fill %>
+                                    <% end %>
+                                    <div class="info-in-my-cart">
+                                        <div class="info-product-in-cart">
+                                            <h5 class="title-product-cart"><%= order_product.product.name %></h5>
+                                        </div>
+                                        <div class="ml-2 div-price-cart">
+                                            <p class="cart-price-product"><%= humanized_money(order_product.product.price) %> €</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+
     </div>
 </div>

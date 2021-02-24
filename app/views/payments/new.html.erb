@@ -3,9 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="flex-section section">
-                    <div class="header-cart d-flex">
-                        <h2 class="">Procéder au paiement</h2>
-                    </div>
+                    <h2 class="header-cart">Procéder au paiement</h2>
                     <%=link_to cart_path(@cart), class:"button-return-shop" do %>
                         <p class="mb-0 mr-3">Retour au panier <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %>
@@ -14,7 +12,7 @@
         </div>
 
         <% unless @cart.cart_products.count == 0 %>
-                <h5 class="text-center recap mt-2">Récapitulatif de la commande</h5>
+            <h5 class="text-center recap mt-2">Récapitulatif de la commande</h5>
             <div class="row flex-cart mt-5">
                 <%# <div class="mt-5 "> %>
                     <div class="col-xl-8 col-lg-12 p-0">

@@ -200,11 +200,13 @@
 .button-pay {
   width: 200px;
 }
+
 .container-button-shopping {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
+
 .button-search {
   padding: 15px 25px;
   border-radius: 3px;
@@ -275,7 +277,7 @@
 .button-order-suivis {
   padding: 3.5px 13.3px;
   text-decoration: none;
-  min-width: 200px;
+  width: auto;
   background: grey;
   color: white;
   border: 1px solid grey;
@@ -317,9 +319,11 @@
     border-radius: 50%;
     width: auto;
   }
+
   .container-button-shopping h2 {
     font-size: 20px;
   }
+
   .container-button-shopping {
     display: flex;
     flex-direction: column;
