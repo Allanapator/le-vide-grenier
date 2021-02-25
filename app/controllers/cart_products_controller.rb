@@ -29,7 +29,7 @@ class CartProductsController < ApplicationController
       redirect_to root_path
       flash[:alert] = "Ce produit est déjà dans votre panier"
     elsif @cart_product.save
-      redirect_to @cart
+      redirect_to root_path
       flash[:notice] = "Le produit a bien été ajouté au panier"
     else
       render :new
