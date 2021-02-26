@@ -1,7 +1,7 @@
 <body class="body-bg">
     <div class="container h-100">
         <!-- <%= link_to "All Products", products_path(@products), class:"button-add"%> -->
-        <div class="row w-100 h-100 flex-product">
+        <div class="row h-100 flex-product">
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
                 <div class="width-700 margin-bottom-5">
                     <% if @product.photo.attachment.nil? %>
@@ -15,7 +15,7 @@
                             <h5 class="name-artist gold"><%= @product.user.name.capitalize %></h5>
                         </div>
                         
-                        <div class="section width-propos">
+                        <div class="width-propos">
                             <div class="d-flex">
                                 <h4 class="gold mr-3"><i class="fas fa-vector-square"></i></h4>
                                 <h4 class="mb-3">À propos de cette oeuvre</h4>
@@ -26,30 +26,13 @@
                                 <p><%= @product.description %></p>
                             <% end %>
                         </div>
-
-                        <div class="d-flex justify-content-between">
-                            <div class="height-cit">
-                                <div class="d-flex">
-                                    <h4 class="gold mr-3"><i class="fas fa-quote-right"></i></h4>
-                                    <h4 class="mb-3"><%= @product.user.name.capitalize %></h4>
-                                </div>
-                                <% cit = ["Chacun de mes tableaux est un pas en avant vers une harmonie que je recherche continuellement.", "Le savant généralise, l'artiste individualise.", "Chaque grand artiste a sa vérité." ] %>
-                                <p class="citation">" <%=  cit.sample  %> "</p>
-                                <div class="d-flex justify-content-center mt-4">
-                                    <%# <a href=""><i class="icone-info-artist fab fa-facebook"></i></a>
-                                    <a href=""><i class="icone-info-artist fab fa-pinterest"></i></a>
-                                    <a href=""><i class="icone-info-artist fab fa-instagram"></i></a> %>
-                                </div>
-                            </div>
-                            
-                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 back-product">
                 <div class="info-product">
-                    <div class="section-none">
+                    <div class="section-none w-100">
                         <% arr = [] %>
                         <% Order.all.each do |order| %>
                             <% order.order_products.each do |order_product| %>
@@ -66,7 +49,7 @@
                         <% if arr.include?(@product.id) %>
                             <button class="button-cart-vendu">Ajouter au panier</button>
                         <% else %>
-                            <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart' %>
+                            <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart button-add-in-show' %>
                         <% end %>
                         <div class="d-flex justify-content-center mt-3">
                             <a href=""><i class="icone-info-price far fa-heart"></i></a>
@@ -74,7 +57,7 @@
                             <a href=""><i class="icone-info-price fas fa-share-alt"></i></a>
                         </div>
                     </div>
-                    <div class="text-center section icone-none">
+                    <div class="text-center section w-100 icone-none">
                         <p class="gold livraison-icon"><i class="fas fa-truck"></i></p>
                         <p class="livraison">Livraison sous 7 jours en moyenne</p>
                     </div>

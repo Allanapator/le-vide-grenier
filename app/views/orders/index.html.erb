@@ -11,9 +11,6 @@
             </div>
         </div>
 
-        
-
-
         <div class="row">
             <div class="col-lg-12 col-12 mx-auto">
                 <% current_user.orders.each do |order| %>
@@ -34,19 +31,19 @@
                             </div>
 
                             <% order.order_products.each do |order_product| %>
-                                <div class="card-product-cart d-flex">
+                                <div class="card-product-order d-flex">
                                     <% if order_product.product.photo.attachment.nil? %>
                                         <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-cart">
                                     <% else%>
                                         <%= cl_image_tag order_product.product.photo.key, class: "image-order", crop: :fill %>
                                     <% end %>
-                                    <div class="info-in-my-cart">
-                                        <div class="info-product-in-cart">
-                                            <h5 class="title-product-cart"><%= order_product.product.name %></h5>
-                                        </div>
-                                        <div class="ml-2 div-price-cart">
-                                            <p class="cart-price-product"><%= humanized_money(order_product.product.price) %> €</p>
-                                        </div>
+                                    <div class="info-in-my-order-info">
+                                        <%# <div class="info-product-in-cart">
+                                        </div> %>
+                                            <h5 class="title-product-cart"><%= order_product.product.name.capitalize %></h5>
+                                            <p class="cart-price-product-order"><%= humanized_money(order_product.product.price) %> €</p>
+                                        <%# <div class="ml-2 div-price-cart">
+                                        </div> %>
                                     </div>
                                 </div>
                             <% end %>
