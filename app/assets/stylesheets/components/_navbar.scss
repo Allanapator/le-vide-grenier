@@ -96,4 +96,17 @@
   display: block;
 }
 
-.search-form {}
+.form-search {
+  border-radius: 50px;
+  min-width: 300px;
+  background-color: #343434;
+  color: white;
+  border: none;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+    background-color: #343434;
+    color: white;
+  }
+}
