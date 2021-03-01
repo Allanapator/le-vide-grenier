@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  searchkick
+
   has_many :tags
   has_one_attached :photo
   belongs_to :user
