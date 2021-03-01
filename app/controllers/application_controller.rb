@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
 
   def default_url_options
-    { host: ENV["https://le-vide-grenier.herokuapp.com/"] || "localhost:3000" }
+    if Rails.env.production?
+      { :host => "https://le-vide-grenier.herokuapp.com/"}
+    else
+      {:host => "localhost:3000"}
+    end
   end
   include Pundit
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
