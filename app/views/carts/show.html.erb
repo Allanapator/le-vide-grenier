@@ -32,10 +32,10 @@
                                                 <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
                                                 <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
                                             </div>
-                                            <div class="ml-2 div-price-cart">
+                                            <p class="div-price-cart cart-price-product m-0"><%= humanized_money(cart_product.product.price) %> €</p>
+                                            <%# <div class="ml-2 div-price-cart">
                                                 <p class="font-12 prix-titre">PRIX</p>
-                                                <p class="cart-price-product"><%= humanized_money(cart_product.product.price) %> €</p>
-                                            </div>
+                                            </div> %>
                                             <div>
                                                 <%= link_to cart_product_path(cart_product), method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cet article ?"}  do %>
                                                     <i class="gold icone-cart far fa-trash-alt d-flex justify-content-center mb-3 poubelle"></i>

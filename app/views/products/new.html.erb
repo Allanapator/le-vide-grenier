@@ -6,7 +6,7 @@
                 <%= simple_form_for @product do |f|%>
                     <%= f.input :name, label: 'Quel est le nom de votre produit ?', required: false %>
                     <%= f.input :price_cents, label: 'Quel est son prix ?', required: false %>
-                    <%= f.input :category, label: 'De quel catégorie votre produit fait-il partit ? (peinture, sculpture, etc..)', required: false %>
+                    <%= f.input :category, as: :select, label: 'De quel catégorie votre produit fait-il partit ? (peinture, sculpture, etc..)', collection: { Peinture: "peinture", Sculpture: "sculpture", Vitrail: "vitrail"}, required: false %>
                     <%# f.input :tag, label: 'new_input_field_name' %>
                     <%= f.input :description, label: 'Donnez une description à votre oeuvre', required: false, input_html: { maxlength: 250, cols: 5, rows: 5 } %>
                     <%= f.input :photo, as: :file %>

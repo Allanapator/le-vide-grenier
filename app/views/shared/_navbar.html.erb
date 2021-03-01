@@ -1,22 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <%= link_to "LVG", root_path, class:"navbar-brand white m-4"%>
+  <%= link_to root_path do %>
+    <%= image_tag("logo.png", class:"logo-css-nav") %>
+  <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse navbar-flex mr-5" id="navbarSupportedContent">
+
+    <%= link_to home_path, class:'nav-link p-0 m-O margin-nav cart-logo' do %>
+      <i class="fas fa-paint-brush"></i>
+    <% end %>
     
     <form class="form-inline my-2 my-lg-0 search-form none" action="/search">
       <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
       <button class="button-search my-2 my-sm-0" type="submit">Search</button>
     </form>
 
-    <button class="cart-logo button-search-logo margin-nav p-0" id="button-search-logo"><i class="fas fa-search"></i></button>
+    <button class="cart-logo nav-link button-search-logo margin-nav p-0" id="button-search-logo"><i class="fas fa-search"></i></button>
 
     <ul class="navbar-nav drop-menu">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle margin-nav cart-logo" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="far fa-user"></i>
+        <a class="nav-link dropdown-toggle margin-nav p-0 m-O cart-logo" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="cart-logo far fa-user"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
@@ -35,8 +42,8 @@
       </li>
     </ul>
 
-    <%= link_to cart_path(@cart), class:' margin-nav cart-logo' do%>
-    <% sum = 0 %>
+    <%= link_to cart_path(@cart), class:'nav-link p-0 m-O margin-nav cart-logo' do %>
+      <% sum = 0 %>
       <i class="fas fa-shopping-cart"><span class="number-product"><% @cart.cart_products.each{ |x| sum += x.quantity } %><%= sum %></span></i>      
     <% end %>
     

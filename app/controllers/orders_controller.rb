@@ -16,10 +16,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if @cart.user_id.nil?
+    
       @cart.user_id = current_user.id
       current_user.cart = @cart
-    end
+    
     
     user_cart = current_user.cart.id
     

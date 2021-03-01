@@ -2,6 +2,7 @@
   background: #212121;
   height: 120px;
   z-index: 9999;
+  padding: 0rem 1rem;
 }
 
 .navbar-flex {
@@ -11,6 +12,18 @@
 
 .margin-nav {
   margin: 24px 16px 0px 16px;
+}
+
+.logo-css {
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
+}
+
+.logo-css-nav {
+  height: 120px;
+  width: auto;
+  object-fit: cover;
 }
 
 .navbar-dark .navbar-nav .nav-link {
