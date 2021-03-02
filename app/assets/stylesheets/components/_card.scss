@@ -74,7 +74,33 @@
   border-radius: 2px;
 }
 
+.card-no-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  min-height: 140px;
+  border-radius: 8px;
 
+}
+
+.info-font {
+  font-size: 32px;
+  color: black;
+}
+
+.border-circle-info {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.font-info-text {
+  font-size: 18px;
+}
 
 .product-image-home {
   padding: 5px;
