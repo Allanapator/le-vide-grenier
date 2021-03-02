@@ -32,7 +32,7 @@
                                 <% end %>
                                 
                                 <% if arr.include?(product.id) %>
-                                    <p class="card-text price text-danger">VENDU</p>
+                                    <p class="card-text price opacity-grey"><%= humanized_money(product.price) %> €</p>
                                 <% else %>
                                     <p class="card-text price"><%= humanized_money(product.price) %> €</p>
                                 <% end %>
