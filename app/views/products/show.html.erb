@@ -104,12 +104,11 @@
                                     <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
                                 <% else %>
                                     <%= link_to product_path(product), class:"border-none-product" do %>
-                                        <% if arr.include?(product.id) %>
+                                        <% unless arr.include?(product.id) %>
                                             <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
                                             <p class="name-product-other pt-2"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
                                         <% else %>
                                             <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
-                                            
                                             <p class="name-product-other pt-2"><%= product.name.capitalize %> - <span class="price-raye"><%= humanized_money(product.price) %> €</span></p>
                                         <% end %>
                                     <% end %>
