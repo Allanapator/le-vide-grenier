@@ -21,6 +21,32 @@
   }
 }
 
+$size: 24px;
+
+.social-share-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
+
+#share-list {
+  margin-top: 20px;
+}
+
+#btn-share-product {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .font24 {
   text-decoration: none;
   color: #d5a870;

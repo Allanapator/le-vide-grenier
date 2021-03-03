@@ -20,6 +20,8 @@ require("channels");
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+//= require social-share-button
+
 // External imports
 import "bootstrap";
 import { button } from "../components/buttonFavorite";
@@ -28,6 +30,7 @@ import { buttonSearch } from "../components/buttonSearch";
 import { btnPay } from "../components/btnPay";
 import { initSweetalert } from "../plugins/init_sweetalert";
 import { heart } from "../components/heartIndex";
+import { buttonShare } from "../components/share";
 // import { btnDelete } from "../components/btnDelete";
 
 // Internal imports, e.g:
@@ -38,6 +41,7 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   btnPay();
   // btnDelete();
+  buttonShare();
   button();
   heart();
   buttonSearch();

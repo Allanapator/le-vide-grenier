@@ -2,7 +2,7 @@
     <div class="container h-100">
         <!-- <%= link_to "All Products", products_path(@products), class:"button-add"%> -->
         <div class="row h-100 flex-product">
-            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center height-back">
                 <div class="width-700 margin-bottom-5">
                     <% if @product.photo.attachment.nil? %>
                         <img src="https://media.artsper.com/artwork/227887_1_grid@2x.jpg?MjIyOTI2NDkxNjAxMTE5MDEx" alt="" class="image-show-product center mt-5 mb-2">
@@ -53,8 +53,11 @@
                         <% end %>
                         <div class="d-flex justify-content-center mt-3">
                             <a href=""><i class="icone-info-price far fa-heart"></i></a>
-                            <a href=""><i class="icone-info-price far fa-envelope"></i></a>
-                            <a href=""><i class="icone-info-price fas fa-share-alt"></i></a>
+                            <a href="mailto:alexis.flipo1@gmail.com allan.rouet@gmail.com" target=_blank ><i class="icone-info-price far fa-envelope"></i></a>
+                            <button class="icone-info-share" href="" id="btn-share-product"><i class="d-flex align-items-center justify-content-center fas fa-share-alt"></i></button>
+                        </div>
+                        <div  class="none" id="share-list">
+                            <%= social_share_button_tag(@product.name) %>
                         </div>
                     </div>
                     <div class="text-center section w-100 icone-none">
