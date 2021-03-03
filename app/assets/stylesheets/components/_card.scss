@@ -239,6 +239,7 @@
 }
 
 .icone-info-share {
+  border: none;
   border-radius: 50%;
   height: 60px;
   width: 60px;
@@ -255,6 +256,10 @@
   &:hover {
     background-color: #d5a870;
     color: white;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

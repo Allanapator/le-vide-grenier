@@ -31,6 +31,7 @@ import { btnPay } from "../components/btnPay";
 import { initSweetalert } from "../plugins/init_sweetalert";
 import { heart } from "../components/heartIndex";
 import { buttonShare } from "../components/share";
+import { buttonHeart } from "../components/heartCart";
 // import { btnDelete } from "../components/btnDelete";
 
 // Internal imports, e.g:
@@ -42,6 +43,7 @@ document.addEventListener("turbolinks:load", () => {
   btnPay();
   // btnDelete();
   buttonShare();
+  buttonHeart();
   button();
   heart();
   buttonSearch();

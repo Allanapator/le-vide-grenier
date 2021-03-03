@@ -41,13 +41,15 @@
                 <div class="d-flex pl-4 pr-4">
                     <% image_tag("logo.png", class:"logo-css logo-css-footer") %>
                     
-                    <div class="info-footer">
+                    <div class="info-footer mb-2">
                         <div class="rubrique">
                             <div class="d-flex justify-content-center col-md-6 col-xs-12 col-sm-6 ">
                                 <div>
                                     <h4>Service Client</h4>
-                                    <p class="mb-1"><a href="" class="link-footer font-14 m-0">Mentions légales</a></p>
-                                    <p class="mb-1"><a href="" class="link-footer font-14 m-0">Conditions générales de vente</a></p>
+                                    <div class="d-flex flex-column">
+                                        <%= link_to 'Mentions légales', mentions_path, class:"link-footer font-14 m-0" %>
+                                        <%= link_to 'Conditions générales de vente', conditions_path, class:"link-footer font-14 m-0" %>
+                                    </div>
                                 </div>
                             </div>
 
@@ -62,12 +64,12 @@
                             </div>
                         </div>
 
-                        <div class="follow mt-4">
+                        <%# <div class="follow mt-4">
                             <p class="m-0 font-14">Suivez-nous</p>
                             <a href="" class="link-footer"><i class="fab fa-facebook-f"></i></a>
                             <a href="" class="link-footer"><i class="fab fa-instagram"></i></a>
                             <a href="" class="link-footer"><i class="fab fa-pinterest-p"></i></a>
-                        </div>
+                        </div> %>
                     </div>
                     
                 </div>
