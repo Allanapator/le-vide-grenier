@@ -1,9 +1,13 @@
 <div class="container  back-height mt-4 mb-4">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-10 col-sm-12 mx-auto">
       <div class="section">
-        <h2 class="text-center mb-0">Je créer mon compte</h2>
+        <h2 class="mb-0 text-center">Créez votre compte</h2>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -62,7 +66,7 @@
           </div>
         </div>
         <div class="form-actions d-flex justify-content-center">
-          <%= f.button :submit, "Sign up", class:"btn btn-dark mt-3 mb-3" %>
+          <%= f.button :submit, "S'enregistrer", class:"btn btn-dark mt-3 mb-3" %>
         </div>
       <% end %>
       
