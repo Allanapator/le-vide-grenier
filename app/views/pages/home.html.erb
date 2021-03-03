@@ -9,7 +9,7 @@
     </div>
     <div class="row d-flex justify-content-around">
         <% count = 0 %>
-        <% @products.shuffle.each do |product|%>
+        <% @products.each do |product|%>
             <% count += 1 %>
             <div class="col-sm-7 col-md-5 col-lg-4 d-flex justify-content-center">
                 <div class="card card-product" style="width: 18rem;" data-number='<%= count %>'>
