@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :update, :destroy]
   skip_before_action :authenticate_user!
 
   def index
@@ -44,6 +44,9 @@ class ProductsController < ApplicationController
   end
   
   def update
+    @product.update(product_params)
+    redirect_to product_path(@product)
+    
     authorize @product
   end
 
