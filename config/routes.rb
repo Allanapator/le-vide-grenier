@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#homePage'
   get '/home' => 'pages#home'
   get '/who' => 'pages#who'
+  get '/mentions' => 'pages#mentions'
+  get '/conditions' => 'pages#conditions'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   
   resources :carts
