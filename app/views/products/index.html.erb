@@ -33,6 +33,7 @@
                             </div>
                             <div class="mt-1 d-flex justify-content-between">
                                 <h6 class="card-title category-title "><%= product.category.capitalize %></h6>
+                                <%= link_to "+", edit_product_path(product), class:"", id:"" %>
                                 <%= link_to "X", product_path(product), method: :delete, class:"", id:"" %>
                             </div>
                         </div>
