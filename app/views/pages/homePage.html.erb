@@ -7,7 +7,7 @@
                         <div class="cadre-dark">
                             <h2 class="p-0  text-center m-0">Commencez votre collection dès maintenant</h2>
                             <%=link_to home_path, class:"d-flex justify-content-center button-cart-home-banner mt-3" do %>
-                                <p class="mb-0">Découvrir <i class="fas fa-arrow-right ml-2"></i></p>
+                                <p class="mb-0 para-contact ">Découvrir <i class="fas fa-arrow-right ml-2"></i></p>
                             <% end %>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
         <div class="container">
             <div class="col-12 no-gutters">
                 <h2 class="pt-5 pb-3 text-center font-422">Le vide grenier en ligne</h2>
-                <h4 class="pb-2 text-center text-h4">Une selection de nos oeuvres</h4>
+                <h4 class="pb-2 text-center text-h4">Un aperçu de nos oeuvres</h4>
             </div>
             <div class="row d-flex justify-content-around">
                 <% Product.all.sample(3).each do |product| %>
@@ -39,7 +39,7 @@
                                         <h5 class="card-title gold"><%= product.name.capitalize %></h5>
                                     </div>
                                     
-                                    <h6 class="card-title category-title mt-1"><%=  product.category.capitalize %></h6>
+                                    <h6 class="card-title category-title mt-1 para-contact"><%=  product.category.capitalize %></h6>
                                 </div>
                             </div>
                         </div>
@@ -50,16 +50,48 @@
     </div>
 </div>
 
+<div class="contain white py-3">
+    <div class="row no-gutters">
+        <div class="col-12">
+            <div class="container">
+                <div class="d-flex justify-content-around align-items-top mt-3">
+                    <div class="col-6">
+                        <div class="d-flex flex-column">
+                            <p class="text-center gold icone-contact"><i class="fas fa-laptop align-items-center justify-content-center"></i></p>
+                            <p class="text-center para-contact">Le numérique au service des artistes amateurs.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="d-flex flex-column">
+                            <p class="text-center gold icone-contact"><i class="far fa-check-circle"></i></p>
+                            <p class="text-center para-contact">Promouvoir la diversité artistique.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mx-auto">
+                    <h4 class="font-weight-bold text-center pt-3">Notre objectif</h4>
+                    <p class="para-contact pt-1">LeVideGrenier aspire à devenir la plateforme de référence pour les artistes amateurs. Nous avons espoir de faire naître de véritable carrière dans le domaine de l'art, que ce soit dans la peinture, la poterie ou même le vitrail.</p>
+                </div>
+                
+                <h5 class="font-weight-bold pt-3">Vous êtes un artiste amateur ?</h5>
+                <p class="pt-1 para-contact">Vous pouvez nous contacter <span><a href="mailto:allan.rouet@gmail.com" class="link-contact-contrat">ici</a></span> afin qu'on discute ensemble de votre projet.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="contain">
     <div class="row no-gutters">
         <div class="col-12 no-gutters">
-            <div class="div-home-img-sec mt-5">
+            <div class="div-home-img-sec">
                 <div class="box-card-dflex">
                     <div class="bloc-text-banner">
                         <h3 class=" font-24 text-center">Nous vous aidons à trouver votre prochain coup de coeur</h3>
                         <p class="text-center grey-color p-0 m-0">Vous avez des questions ?</p>
                         <p class="text-center grey-color p-0 m-0">Besoin de conseils pour une oeuvre?</p>
-                        <a href="mailto:alexis.flipo1@gmail.com allan.rouet@gmail.com" target=_blank class="d-flex justify-content-center button-cart-home mt-3">Venez nous demander</a>
+                        <a href="mailto:alexis.flipo1@gmail.com allan.rouet@gmail.com" target=_blank class="d-flex justify-content-center button-cart-home mt-3 para-contact">Venez nous demander</a>
                     </div>
                     <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/background_quizz_3.ce9ab797.jpg" alt="" class="img-sec">
                 </div>

@@ -20,7 +20,10 @@ require("channels");
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-//= require social-share-button
+//= require jquery
+
+//= require social-share-button ;
+//= require social-share-button/wechat # if you need use WeChat
 
 // External imports
 import "bootstrap";
