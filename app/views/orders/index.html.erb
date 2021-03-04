@@ -5,7 +5,7 @@
                 <div class="flex-section section">
                     <h2 class="header-cart"> Mes commandes</h2>
                     <%=link_to home_path, class:"button-return-shop" do %>
-                        <p class="mb-0">Retour au shopping <i class="fas fa-arrow-right ml-2"></i></p>
+                        <p class="mb-0 para-contact">Retour au shopping <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %> 
                 </div>
             </div>
@@ -18,13 +18,13 @@
                         <div class="card-product-cart d-flex mb-5 mt-5 mx-auto">
                             <div class="info-in-my-order">
                                 <div class="d-flex-info-banner-order section p-0">
-                                    <p class="">Commande effectué le <%= order.created_at.strftime("%d %B %Y")%> <span class="badge badge-primary ml-3"><%= order.state %></span></p>
+                                    <p class="para-contact">Commande effectué le <%= order.created_at.strftime("%d %B %Y")%> <span class="badge badge-primary para-contact ml-3"><%= order.state %></span></p>
                                     <div class="d-flex-columnn">
                                         <p class="mb-1 hide">Total</p>
                                         <p class="gold mb-1"><%= order.amount %> €</p>
                                     </div>
                                     <div class="flex-order">
-                                        <%= link_to 'Détails', order_path(order) , class:"button-order-suivis mb-3"%>
+                                        <%= link_to 'Détails', order_path(order) , class:"para-contact button-order-suivis mb-3"%>
                                         <%= link_to order_path(order), class:"", method: :delete, data: {confirm: "Êtes-vous sûre de vouloir supprimer cette commande ?"}  do %>
                                             <p><i class="gold icone-cart far fa-trash-alt"></i></p>
                                         <% end %>
@@ -60,7 +60,7 @@
                         <div class="border-circle-info">
                             <p class="info-font">i</p>
                         </div>
-                        <p class="m-0 font-info-text">Vous n'avez passé aucune commande à ce jour</p>
+                        <p class="m-0 para-contact font-info-text">Vous n'avez passé aucune commande à ce jour</p>
                     </div>
                 </div>
             </div>

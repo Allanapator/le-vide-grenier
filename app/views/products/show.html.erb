@@ -20,10 +20,23 @@
                                 <h4 class="mb-3">À propos de cette oeuvre</h4>
                             </div>
                             <% if @product.description.nil? || @product.description == ""%>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius quisquam sed perspiciatis aliquam saepe molestias tempore suscipit assumenda non, delectus odit aut, expedita rerum soluta provident sequi commodi aliquid.</p>
+                                <p>L'artiste n'a donné aucune description à cette oeuvre pour le moment.</p>
                             <% else %>
-                                <p><%= @product.description %></p>
+                                <p class="para-contact"><%= @product.description %></p>
                             <% end %>
+                        </div>
+
+                        <div class="width-propos mt-4">
+                            <div class="d-flex align-items-center">
+                                <div class="border-circle-info-product text-center gold">
+                                    <p class="info-font-product gold m-0">!</p>
+                                </div>
+                                
+                                <h4 class="mb-0 ml-2">Information importante</h4>
+                            </div>
+                            
+                            <p class="para-contact mt-3">Le moyen de paiement étant en phase de test, vous ne pourrez pas achetez cette oeuvre via notre plateforme, ni être livré par nos soins. <br>
+                            Or vous avez la possibilité de contacter les artistes via notre rubrique <span><%= link_to 'à propos de nous', who_path, class:"gold link-contact-contrat para-contact m-0" %></span>.</p>
                         </div>
                     </div>
                 </div>
@@ -45,7 +58,7 @@
                             <p class="info-price">PRIX</p>
                             <p class="price-show gold"><%= humanized_money(@product.price) %> €</p>
                         <% end %>
-                        <p class="livraison">Livraison & retour gratuits partout dans le monde</p>
+                        <p class="livraison para-contact">Livraison & retour gratuits partout dans le monde</p>
                         <% if arr.include?(@product.id) %>
                             <button class="button-cart-vendu">VENDU</button>
                         <% else %>
@@ -62,24 +75,24 @@
                     </div>
                     <div class="text-center section w-100 icone-none">
                         <p class="gold livraison-icon"><i class="fas fa-truck"></i></p>
-                        <p class="livraison">Livraison sous 7 jours en moyenne</p>
+                        <p class="livraison para-contact">Livraison sous 7 jours en moyenne</p>
                     </div>
                     <div class="pd-20 icone-none">
                         <div class="d-flex justify-content-between mb-2">
                             <p class="gold livraison-icon mr-5"><i class="fas fa-truck"></i></p>
-                            <p>La livraison est assurée de bout en bout par LVG.</p>
+                            <p class="para-contact">La livraison est assurée de bout en bout par LVG.</p>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <p class="gold livraison-icon mr-5"><i class="fas fa-box"></i></p>
-                            <p>LVG applique le délai de rétractation de 14 jours, qui court à partir du jour de réception de l'oeuvre chez vous.</p>
+                            <p class="para-contact">LVG applique le délai de rétractation de 14 jours, qui court à partir du jour de réception de l'oeuvre chez vous.</p>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <p class="gold livraison-icon mr-5"><i class="fas fa-lock"></i></p>
-                            <p>Sur LVG, vous payez en toute sécurité par carte ou virement bancaires.</p>
+                            <p class="para-contact">Sur LVG, vous payez en toute sécurité par carte ou virement bancaires.</p>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <p class="gold livraison-icon mr-5"><i class="fas fa-check-circle"></i></p>
-                            <p>LVG garantit sérieux et traçabilité.</p>
+                            <p class="para-contact">LVG garantit sérieux et traçabilité.</p>
                         </div>
                     </div>
                 </div>

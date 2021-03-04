@@ -7,7 +7,7 @@ const btnPay = () => {
         icon: "info",
         title: "Procédure de paiement factice",
         text:
-          "La méthode de paiement est en mode test pour éviter les réelles transactions. Remplissez les numéros de carte bleue par: '4242 4242 4242 4242' pour procéder à la transaction virtuelle.",
+          "La méthode de paiement est en mode test pour l'instant. Si vous souhaitez acheter l'oeuvre nous vous conseillons de contacter les artistes via notre rubrique 'À propos de nous'",
         confirmButton: true,
         closeOnConfirm: true,
       });

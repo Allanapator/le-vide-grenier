@@ -103,6 +103,18 @@
   margin-bottom: 15px;
 }
 
+.border-circle-info-product {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #d5a870;
+  border-radius: 50px;
+}
+
+.info-font-product {
+  font-size: 26px;
+  color: #d5a870;
+}
+
 .font-info-text {
   font-size: 18px;
 }
@@ -220,6 +232,14 @@
   margin-bottom: 5px;
 }
 
+.icone-contact {
+  font-size: 48px;
+}
+
+.para-contact {
+  font-weight: 300;
+}
+
 .icone-info-price {
   border-radius: 50%;
   padding: 20px;
@@ -335,7 +355,7 @@
 .section {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-top: 20px;
 }
 

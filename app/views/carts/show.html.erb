@@ -8,7 +8,7 @@
                         <h2 class="count-of-product d-flex justify-content-center align-items-center"><%= @cart.cart_products.count %></h2>
                     </div>
                     <%=link_to home_path, class:"button-return-shop button-return-shopp" do %>
-                        <p class="mb-0 mr-3">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
+                        <p class="para-contact mb-0 mr-3">Continuer le shopping <i class="fas fa-arrow-right ml-2"></i></p>
                     <% end %>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                                         
                                             <div class="info-product-in-cart">
                                                 <h5 class="title-product-cart"><%= link_to cart_product.product.name.capitalize, product_path(cart_product.product), class:"lt-product" %></h5>
-                                                <p class="artist-name-cart"><%= cart_product.product.user.name.capitalize %></p>
+                                                <p class="artist-name-cart para-contact"><%= cart_product.product.category.capitalize %></p>
                                             </div>
                                             <p class="div-price-cart cart-price-product m-0"><%= humanized_money(cart_product.product.price) %> €</p>
                                             <%# <div class="ml-2 div-price-cart">
@@ -62,10 +62,10 @@
                             <p class="gold price-total-cart"><%= humanized_money(@cart.total_price) %> €</p>
                             <div class="cart-livraison d-flex">
                                 <p class="button-like-cart mr-3"> <i class="fas fa-truck"></i></p>
-                                <p class="">Livraison sous 7 jours en moyenne</p>
+                                <p class="para-contact">Livraison sous 7 jours en moyenne</p>
                             </div>
                             <%= simple_form_for @order do |f| %>
-                                <%= f.button :submit, "Valider mon panier", class:"button-cart mb-3", id:"btn-pay" %>
+                                <%= f.button :submit, "Valider mon panier", class:" para-contact button-cart mb-3", id:"btn-pay" %>
                             <% end %>
                             <img src="https://d17h7hjnfv5s46.cloudfront.net/assets/build/images/elements/cards_all.fbf13bc8.png" alt="" class="img-cart-paiement">
                         </div>
@@ -79,7 +79,7 @@
                         <div class="border-circle-info">
                             <p class="info-font">i</p>
                         </div>
-                        <p class="m-0 font-info-text">Il n'y a pas d'oeuvre dans votre panier</p>
+                        <p class="m-0 para-contact font-info-text">Il n'y a pas d'oeuvre dans votre panier</p>
                     </div>
                 </div>
             </div>
