@@ -162,10 +162,14 @@
 
 .test {
   padding: 30px;
-  min-height: 200px;
+
   height: auto;
   background: #2F2F2F;
-  width: 100%;
+
+}
+
+.black-back {
+  background-color: #2F2F2F;
 }
 
 .name-product-other {
@@ -331,14 +335,14 @@
   position: absolute;
   right: 0;
   width: 100%;
-  height: 1000px;
+  height: 1059px;
   border: 1px solid transparent;
   border-radius: 2px;
   background: #F8F8F8;
 }
 
 .height-back {
-  height: 1000px;
+  height: 1059px;
 }
 
 .flex-columnn {

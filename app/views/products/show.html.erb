@@ -26,7 +26,7 @@
                             <% end %>
                         </div>
 
-                        <div class="width-propos mt-4">
+                        <div class="width-propos mt-4 ">
                             <div class="d-flex align-items-center">
                                 <div class="border-circle-info-product text-center gold">
                                     <p class="info-font-product gold m-0">!</p>
@@ -35,7 +35,7 @@
                                 <h4 class="mb-0 ml-2">Information importante</h4>
                             </div>
                             
-                            <p class="para-contact mt-3">Le moyen de paiement étant en phase de test, vous ne pourrez pas achetez cette oeuvre via notre plateforme, ni être livré par nos soins. <br>
+                            <p class="para-contact mt-3 mb-2">Le moyen de paiement étant en phase de test, vous ne pourrez pas achetez cette oeuvre via notre plateforme, ni être livré par nos soins. <br>
                             Or vous avez la possibilité de contacter les artistes via notre rubrique <span><%= link_to 'à propos de nous', who_path, class:"gold link-contact-contrat para-contact m-0" %></span>.</p>
                         </div>
                     </div>
@@ -107,33 +107,29 @@
         <% end %>
     <% end %>
 
-    <div class="test">
-        <div class="row">
-            <div class="col-12">
-                <h4 class="other-product-artist">Autres suggestions</h4>
-                <div class="flex-columnn";>
-                    <% @product.user.products[0..3].each do |product| %>
-                        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 ">
-                            <div class="other-product-div m-2">
-                                <% if product.photo.attachment.nil? %>
-                                    <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image" %>
-                                    <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
+    <div class="contain black-back">
+            <h4 class="other-product-artist mt-3">Autres suggestions</h4>
+        <div class="row no-gutters">
+            <% @product.user.products[0..3].each do |product| %>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6  d-flex justify-content-around">
+                    <div class="other-product-div m-2">
+                        <% if product.photo.attachment.nil? %>
+                            <%= link_to image_tag("https://cdn1.sklum.com/fr/774532/pack-de-2-chaises-en-velours-glamm.jpg"), product_path(product), class:"product-image" %>
+                            <p class="name-product-other"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
+                        <% else %>
+                            <%= link_to product_path(product), class:"border-none-product" do %>
+                                <% unless arr.include?(product.id) %>
+                                    <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
+                                    <p class="name-product-other pt-2"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
                                 <% else %>
-                                    <%= link_to product_path(product), class:"border-none-product" do %>
-                                        <% unless arr.include?(product.id) %>
-                                            <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
-                                            <p class="name-product-other pt-2"><%= product.name.capitalize %> - <%= humanized_money(product.price) %> €</p>
-                                        <% else %>
-                                            <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
-                                            <p class="name-product-other pt-2"><%= product.name.capitalize %> - <span class="price-raye"><%= humanized_money(product.price) %> €</span></p>
-                                        <% end %>
-                                    <% end %>
+                                    <%= cl_image_tag product.photo.key, class: "product-image", crop: :fill %>
+                                    <p class="name-product-other pt-2"><%= product.name.capitalize %> - <span class="price-raye"><%= humanized_money(product.price) %> €</span></p>
                                 <% end %>
-                            </div>
-                        </div>
-                    <% end %>
+                            <% end %>
+                        <% end %>
+                    </div>
                 </div>
-            </div>
+            <% end %>
         </div>
     </div>
 </body>

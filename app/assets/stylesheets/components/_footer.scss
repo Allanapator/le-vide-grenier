@@ -13,9 +13,9 @@
   height: auto;
 }
 
-.footer-services {
-  width: auto;
-}
+// .footer-services {
+//   width: auto;
+// }
 
 .font-42 {
   font-size: 60px;
@@ -96,6 +96,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: start;
+}
+
+.flex-footer-star {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 775px) {
