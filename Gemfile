@@ -26,7 +26,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'pg_search'
 gem 'searchkick', '~> 4.0'
-gem 'social-share-button'
 gem 'jquery-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

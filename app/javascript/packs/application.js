@@ -20,11 +20,6 @@ require("channels");
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-//= require jquery
-
-//= require social-share-button ;
-//= require social-share-button/wechat # if you need use WeChat
-
 // External imports
 import "bootstrap";
 import { button } from "../components/buttonFavorite";
@@ -33,7 +28,7 @@ import { buttonSearch } from "../components/buttonSearch";
 import { btnPay } from "../components/btnPay";
 import { initSweetalert } from "../plugins/init_sweetalert";
 import { heart } from "../components/heartIndex";
-import { buttonShare } from "../components/share";
+// import { buttonShare } from "../components/share";
 import { buttonHeart } from "../components/heartCart";
 // import { btnDelete } from "../components/btnDelete";
 
@@ -45,7 +40,7 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   btnPay();
   // btnDelete();
-  buttonShare();
+  // buttonShare();
   buttonHeart();
   button();
   heart();
