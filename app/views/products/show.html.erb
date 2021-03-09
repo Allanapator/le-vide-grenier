@@ -60,14 +60,14 @@
                         <% end %>
                         <p class="livraison para-contact">Livraison & retour gratuits partout dans le monde</p>
                         <% if arr.include?(@product.id) %>
-                            <button class="button-cart-vendu">VENDU</button>
+                            <button class="button-cart-vendu">VENDU </button>
                         <% else %>
                             <%= button_to 'Ajouter au panier', cart_products_path(product_id: @product), class:'button-cart button-add-in-show' %>
                         <% end %>
                         <div class="d-flex justify-content-around mt-3">
                             <button class="icone-info-share" id="button-heart-cart-circle"><i class="d-flex align-items-center justify-content-centers far fa-heart"></i></button>
                             <a href="mailto:alexis.flipo1@gmail.com allan.rouet@gmail.com" target=_blank ><i class="icone-info-price far fa-envelope"></i></a>
-                            
+
                         </div>
                     </div>
                     <div class="text-center section w-100 icone-none">
