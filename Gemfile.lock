@@ -253,8 +253,6 @@ GEM
     simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    social-share-button (1.2.3)
-      coffee-rails
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -313,6 +311,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary (~> 1.16.0)
+  coffee-rails
   devise
   dotenv-rails
   font-awesome-sass
@@ -332,7 +331,6 @@ DEPENDENCIES
   searchkick (~> 4.0)
   selenium-webdriver
   simple_form
-  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe
