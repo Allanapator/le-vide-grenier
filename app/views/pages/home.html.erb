@@ -1,15 +1,44 @@
 <div class="container mb-5">
     <div class="title-flex-div section">
         <h2 class="align-item-title">Découvrez nos oeuvres</h2>
-        <% if Product.all.count > 0 %>
-            <h4 class="mr-3 mb-0"> <span class="gold"><%= Product.all.count %></span> oeuvres de disponible</h4>
+        <% product_counter = @products.count %>
+
+        <% if product_counter > 1 %>
+            <h4 class="mr-3 mb-0"> <span class="gold"><%= product_counter %></span> oeuvres de disponible</h4>
         <% else %>
-            <h4 class="mb-0 mr-3"> <span class="gold"><%= Product.all.count %></span> oeuvre de disponible</h4>
+            <h4 class="mb-0 mr-3"> <span class="gold"><%= product_counter %></span> oeuvre de disponible</h4>
         <% end %>
     </div>
+
+    <div class="row">
+        <div class="col-8 mx-auto">
+
+            <form id="form1" action="/home" class="mx-auto">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="d-flex flex-column">
+                        
+                        <select name="q" type="search" class="select-form-css">
+                            <% arr = [] %>
+                            <% Product.all.each do |product| %>
+                                <% unless arr.include?(product.category) %>
+                                    <% arr << product.category %>
+                                <% end %>
+                            <% end %>
+                            <% arr.each do |element| %>
+                                <option value="<%= element %>"><%= element %></option>
+                            <% end %>
+                        </select>
+                    </div>
+                    <button type="submit" form="form1" value="Submit" class="button-search-filter ml-3">Rechercher</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
     <div class="row d-flex justify-content-around">
         <% count = 0 %>
-        <% @products.shuffle.each do |product|%>
+        <% @products.each do |product|%>
             <% count += 1 %>
             <div class="col-sm-7 col-md-5 col-lg-4 d-flex justify-content-center">
                 <div class="card card-product" style="width: 18rem;" data-number='<%= count %>'>

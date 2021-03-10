@@ -13,4 +13,8 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :category, presence: true
   validates :price_cents, presence: true
+
+  # def self.search(search)
+  #   where("category ILIKE ?", "%#{search}%")
+  # end
 end

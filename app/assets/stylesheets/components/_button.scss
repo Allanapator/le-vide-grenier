@@ -186,6 +186,39 @@ $size: 24px;
   }
 }
 
+.select-form-css {
+  background-color: transparent;
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 4px;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+    background-color: white;
+  }
+}
+
+.button-search-filter {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #d5a870;
+  color: white;
+  border: 1px solid transparent;
+  transition: 0.5s background ease;
+
+  &:hover {
+    text-decoration: none;
+    background: #d29961;
+    color: white;
+  }
+}
+
 .link-contact-contrat {
   text-decoration: none;
   color: #d5a870;
